@@ -1,0 +1,80 @@
+// Cards
+@mixin card-sport {
+  background   : $color-white;
+  box-shadow   : $drop-shadow;
+  text-align   : center;
+  margin-bottom: 2em;
+  .image {
+    color : $color-white;
+    height: 135px;
+    p {
+      margin: 30px 0 10px;
+      strong {
+        color: $color-white;
+      }
+    }
+    .date {
+      background: $color-blue-alpha;
+      height    : 80px;
+      margin    : 0 0 0 1em;
+      position  : relative;
+      padding   : 1.1em 0.5em;
+      width     : 90px;
+    }
+  }
+  .sports {
+    background-size    : cover;
+    background-repeat  : no-repeat;
+    background-position: center;
+  }
+  .running {
+    background-image: url("../images/running.jpg");
+  }
+}
+// Badge
+@mixin badge() {
+  background-color: $color-white-alpha;
+  border-radius   : $font-size-base * 5;
+  color           : darken($color-blue, 20%);
+  display         : inline-block;
+  font-family     : $font-family-base;
+  font-size       : $font-size-base;
+  line-height     : 1;
+  padding         : 0.4em 1em;
+}
+//flashes
+$base-spacing: 1.5em !default;
+$warning-color: #FFFF8D !default;
+$error-color: #EF9A9A !default;
+$success-color: #C5E1A5 !default;
+
+@mixin flash($color) {
+  background-color: $color;
+  color: darken($color, 60%);
+  display: block;
+  margin: $base-spacing / 2 0;
+  padding: $base-spacing / 2;
+  text-align: center;
+
+  a {
+    color: darken($color, 70%);
+    text-decoration: underline;
+
+    &:focus,
+    &:hover {
+      color: darken($color, 90%);
+    }
+  }
+}
+
+.flash-warning {
+  @include flash($warning-color);
+}
+
+.flash-error {
+  @include flash($error-color);
+}
+
+.flash-success {
+  @include flash($success-color);
+}

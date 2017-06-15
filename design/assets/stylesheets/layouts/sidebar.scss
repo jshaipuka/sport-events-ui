@@ -1,0 +1,59 @@
+.sidebar {
+  padding: 0 0 0 1em;
+  @include media(min-width 769px) {
+    @include span-columns(3);
+  }
+  @include media(max-width 768px) {
+    @include span-columns(4);
+  }
+  .filters {
+    @include media(max-width 524px) {
+      display: none;
+    }
+    background   : $color-white;
+    box-shadow   : $drop-shadow;
+    padding      : 20px 10px;
+    margin-bottom: 1em;
+    h5 {
+      margin: .5em 0;
+      &:first-of-type {
+        margin-top: 0;
+      }
+    }
+    label{
+      height: 2em;
+    }
+  }
+  .filters-mobile{
+    background   : $color-white;
+    box-shadow   : $drop-shadow;
+    padding      : 20px 10px;
+    margin-bottom: 1em;
+    h5 {
+      margin: .5em 0;
+      &:first-of-type {
+        margin-top: 0;
+      }
+    }
+    label{
+      height: 2em;
+    }
+  }
+  button,
+  select,
+  .input-search-select {
+    margin: 0.5em 0;
+    .btn-full {
+      margin-top: 2em;
+    }
+  }
+  .ad-vertical {
+    @include media(max-width 524px) {
+      display: none;
+    }
+    background   : #000;
+    height       : 400px;
+    width        : 240px;
+    margin-bottom: 20px;
+  }
+}

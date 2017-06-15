@@ -1,0 +1,30 @@
+@import url(https://fonts.googleapis.com/css?family=Amatic+SC);
+body {
+  font-family: $font-family-base;
+  font-size  : $font-size-base;
+  color      : $color-blue;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $font-family-title;
+  margin     : 0;
+}
+h1 {
+  font-size: $font-size-title;
+  @include media(max-width 524px) {
+    font-size: $font-size-title-h3;
+  }
+}
+h3 {
+  font-size: $font-size-title-h3;
+}
+h5 {
+  font-size: $font-size-title-h5;
+}
+a {
+  text-decoration: none;
+}

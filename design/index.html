@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Events 4 Sport</title>
+
+  <!-- <link rel="stylesheet" type="text/css" href="assets/stylesheets/plugins/loader/normalize.css" /> -->
+  <link rel="stylesheet" type="text/css" href="assets/stylesheets/plugins/loader/component.css" />
+  <link rel="stylesheet" href="assets/stylesheets/style.css">
+  <script src="assets/javascripts/snap.svg-min.js"></script>
+
+</head>
+
+<body>
+  <div id="pagewrap" class="pagewrap">
+
+    <!-- <div class="container show" id="page-1">
+
+    </div> -->
+
+    <div class="container" id="page-2">
+      <header>
+
+        <div class="social-icons">
+          <div>
+            <section>
+              <a href="#">
+                <span class="icon-vk"></span>
+              </a>
+              <a href="#">
+                <span class="icon-facebook"></span>
+              </a>
+              <a href="#">
+                <span class="icon-youtube"></span>
+              </a>
+              <a href="#">
+                <span class="icon-twitter"></span>
+              </a>
+
+              <a href="#">En</a>
+            </section>
+          </div>
+        </div>
+
+        <div class="menu">
+          <a href="index.html">
+            <img class="logo" src="assets/images/e4s.png" alt="Event4Sport" />
+          </a>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="createevent.html">Create Event</a></li>
+            <li><a href="login.html">Login</a></li>
+          </ul>
+          <div class="mobile-menu">
+            <li>
+              <a href="#">
+                <img src="assets/images/icon-menu.svg" alt="Menu" />
+              </a>
+              <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="createevent.html">Create Event</a></li>
+                <li><a href="login.html">Login</a></li>
+              </ul>
+            </li>
+          </div>
+        </div>
+
+
+        <div class="banner">
+          <div class="banner-back">
+
+            <section>
+
+              <h1>Find Sport Events in Russia</h1>
+
+              <div class="inputs-search">
+                <div class="input-search-text">
+                  <input type="text" name="name" value="" placeholder="Search for sport">
+                </div>
+
+                <div class="input-search-select">
+                  <div class="dropdown">
+                    <div class="dropdown-container">
+                      <p class="dropdown-button">Choose a City</p>
+                      <ul class="dropdown-menu dropdown-select">
+                        <li>Moscow</li>
+                        <li>St Petersburg</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="input-search-btn">
+                  <button type="button" name="button">Search</button>
+                </div>
+              </div>
+
+            </section>
+
+          </div>
+        </div>
+
+      </header>
+
+      <!-- Return to Top -->
+      <a href="javascript:" id="return-to-top">
+        <span></span>
+      </a>
+
+
+      <div class="main-content">
+
+        <h3>Upcoming Events</h3>
+
+        <div class="ad-h-tablet">
+          <span>Ads (728 x 90)</span>
+        </div>
+        <div class="ad-h-mobile">
+          <span>Ads (320 x 100)</span>
+        </div>
+        <!-- mobile -->
+        <div class="sidebar">
+
+          <button type="button" class="js-menu-trigger sliding-panel-button btn-full">
+            <img src="assets/images/icon-filter.svg" alt="icon filter" />
+          </button>
+          <nav class="js-menu sliding-panel-content">
+            <div class="filters-mobile">
+              <h5>Filter Events</h5>
+              <label>
+                <input type="checkbox" name="checkbox" value="value">Select All</label>
+              <label>
+                <input type="checkbox" name="checkbox" value="value">Running</label>
+              <label>
+                <input type="checkbox" name="checkbox" value="value">Badminton
+                <span class="badge">44</span>
+              </label>
+              <label>
+                <input type="checkbox" name="checkbox" value="value">Basketball</label>
+              <label>
+                <input type="checkbox" name="checkbox" value="value">Biathlon
+              <span class="badge">54</span>
+            </label>
+
+              <label>
+                <input type="checkbox" name="checkbox" value="value">Bowling
+              <span class="badge">45</span>
+            </label>
+
+              <label>
+                <input type="checkbox" name="checkbox" value="value">Cycling</label>
+              <label>
+                <input type="checkbox" name="checkbox" value="value">Volleyball</label>
+              <label>
+                <input type="checkbox" name="checkbox" value="value">Duathlon</label>
+              <label>
+                <input type="checkbox" name="checkbox" value="value">Equestrian</label>
+              <label>
+                <input type="checkbox" name="checkbox" value="value">Cross-country skiing</label>
+              <label>
+                <input type="checkbox" name="checkbox" value="value">Multisport</label>
+              <label>
+                <input type="checkbox" name="checkbox" value="value">Orientation</label>
+              <label>
+                <input type="checkbox" name="checkbox" value="value">Ping Pong</label>
+              <label>
+                <input type="checkbox" name="checkbox" value="value">Swimming</label>
+              <label>
+                <input type="checkbox" name="checkbox" value="value">Tennis</label>
+              <label>
+                <input type="checkbox" name="checkbox" value="value">Triathlon</label>
+              <label>
+                <input type="checkbox" name="checkbox" value="value">Football</label>
+
+              <h5>When</h5>
+              <button type="button" name="button">Past Events</button>
+              <button type="button" name="button">Upcoming Events</button>
+
+              <h5>Where</h5>
+
+              <div class="input-search-select">
+                <div class="dropdown">
+                  <div class="dropdown-container">
+                    <p class="dropdown-button">Choose a City</p>
+                    <ul class="dropdown-menu dropdown-select">
+                      <li>Moscow</li>
+                      <li>St Petersburg</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <button type="button" name="button" class="btn-full">Filter</button>
+            </div>
+          </nav>
+          <div class="js-menu-screen sliding-panel-fade-screen"></div>
+
+          <div class="filters">
+            <h5>Filter Events</h5>
+            <div class="input-search-select">
+              <div class="dropdown">
+                <div class="dropdown-container">
+                  <p class="dropdown-button">Choose a Sport</p>
+                  <ul class="dropdown-menu dropdown-select">
+                    <li>Running</li>
+                    <li>Badminton</li>
+                    <li>Basketball</li>
+                    <li>Biathlon</li>
+                    <li>Bowling</li>
+                    <li>Cycling</li>
+                    <li>Volleyball</li>
+                    <li>Duathlon</li>
+                    <li>Equestrian</li>
+                    <li>Cross-country skiing</li>
+                    <li>Multisport</li>
+                    <li>Orientation</li>
+                    <li>Ping Pong</li>
+                    <li>Swimming</li>
+                    <li>Tennis</li>
+                    <li>Triathlon</li>
+                    <li>Football</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <h5>When</h5>
+            <button type="button" name="button">Past Events</button>
+            <button type="button" name="button">Upcoming Events</button>
+
+            <h5>Where</h5>
+
+            <div class="input-search-select">
+              <div class="dropdown">
+                <div class="dropdown-container">
+                  <p class="dropdown-button">Choose a City</p>
+                  <ul class="dropdown-menu dropdown-select">
+                    <li>Moscow</li>
+                    <li>St Petersburg</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <button type="button" name="button" class="btn-full">Filter</button>
+          </div>
+
+          <div class="filters">
+            <h5>Filter Events</h5>
+            <label>
+              <input type="checkbox" name="checkbox" value="value">Select All</label>
+            <label>
+              <input type="checkbox" name="checkbox" value="value">Running</label>
+            <label>
+              <input type="checkbox" name="checkbox" value="value">Badminton
+              <span class="badge">4</span>
+            </label>
+
+            <label>
+
+              <input type="checkbox" name="checkbox" value="value">Basketball</label>
+            <label>
+              <input type="checkbox" name="checkbox" value="value">Biathlon</label>
+            <label>
+              <input type="checkbox" name="checkbox" value="value">Bowling
+              <span class="badge">44</span>
+            </label>
+
+            <label>
+              <input type="checkbox" name="checkbox" value="value">Cycling</label>
+            <label>
+              <input type="checkbox" name="checkbox" value="value">Volleyball</label>
+            <label>
+              <input type="checkbox" name="checkbox" value="value">Duathlon
+              <span class="badge">58</span>
+            </label>
+
+            <label>
+              <input type="checkbox" name="checkbox" value="value">Equestrian</label>
+            <label>
+              <input type="checkbox" name="checkbox" value="value">Cross-country skiing</label>
+            <label>
+              <input type="checkbox" name="checkbox" value="value">Multisport</label>
+            <label>
+              <input type="checkbox" name="checkbox" value="value">Orientation</label>
+            <label>
+              <input type="checkbox" name="checkbox" value="value">Ping Pong</label>
+            <label>
+              <input type="checkbox" name="checkbox" value="value">Swimming</label>
+            <label>
+              <input type="checkbox" name="checkbox" value="value">Tennis</label>
+            <label>
+              <input type="checkbox" name="checkbox" value="value">Triathlon</label>
+            <label>
+              <input type="checkbox" name="checkbox" value="value">Football</label>
+
+            <h5>When</h5>
+            <button type="button" name="button">Past Events</button>
+            <button type="button" name="button">Upcoming Events</button>
+
+            <h5>Where</h5>
+
+            <div class="input-search-select">
+              <div class="dropdown">
+                <div class="dropdown-container">
+                  <p class="dropdown-button">Choose a City</p>
+                  <ul class="dropdown-menu dropdown-select">
+                    <li>Moscow</li>
+                    <li>St Petersburg</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <button type="button" name="button" class="btn-full">Filter</button>
+          </div>
+
+          <div class="filters">
+            <h5>Subscribe</h5>
+            <p>Subscribe to new events</p>
+            <input type="text" name="name" value="" placeholder="Insert your e-mail">
+            <button type="button" name="button">Subscribe</button>
+          </div>
+
+          <div class="ad-vertical">
+          </div>
+
+        </div>
+
+
+
+        <div class="content">
+          <div class="ad-horizontal">
+            <span>Ads (728 x 90)</span>
+          </div>
+
+          <div>
+
+            <div class="card">
+              <div class="image sports running">
+                <div class="date">
+                  <strong>30 / January</strong>
+                  <br>2016</div>
+                <p>
+                  <strong>Running</strong>
+                </p>
+              </div>
+              <div class="text">
+                <h5>Pioneer Camp Trail 2016</h5>
+                <p>A small text that says something about the event.</p>
+                <div class="card-infos">
+                  <p>
+                    <span class="icon-clock"></span>12:00</p>
+                  <p>
+                    <span class="icon-map"></span>Moscow</p>
+                  <p>
+                    <span class="icon-fee"></span>Fee</p>
+                </div>
+
+                <div class="modal">
+                  <label for="modal-1">
+                    <div class="modal-trigger">See more - I'm a popup!</div>
+                  </label>
+                  <input class="modal-state" id="modal-1" type="checkbox" />
+                  <div class="modal-fade-screen">
+                    <div class="modal-inner">
+                      <div class="modal-close" for="modal-1"></div>
+                      <h1>Pioneer Camp Trail 2016</h1>
+                      <div class="card">
+                        <div class="image sports running">
+                          <div class="date">
+                            <strong>30 / Jan</strong>
+                            <br>2016</div>
+                          <p>
+                            <strong>Running</strong>
+                          </p>
+                        </div>
+                        <div class="text">
+                          <!-- <h5>Pioneer Camp Trail 2016</h5>
+                    <p>A small text that says something about the event.</p> -->
+                          <div class="card-infos">
+                            <p>
+                              <span class="icon-clock"></span>12:00</p>
+                            <p>
+                              <span class="icon-map"></span>Moscow</p>
+                            <p>
+                              <span class="icon-fee"></span>Fee</p>
+                          </div>
+                        </div>
+                      </div>
+                      <p class="modal-intro">The distance of 200 m, the movement style - free. Start - at the starting device. Timing - e.</p>
+                      <p>
+                        - 23-24-25 October to Friday, 11.15 - reeling out, the training of athletes. Start - qualifying races. Held for 45 minutes each. According t o the results of the competition are determined winners, 3-4 persons, which are involved in the final series.
+                        Final - the last 15 minutes of each hour.
+                      </p>
+                      <p>
+                        - Participants bring their inventory.
+                      </p>
+                      <p>
+                        - Passage to the exhibition registration
+                      </p>
+                      <p>
+                        - participate in the competition without an appointment. Issue numbers and recording takes place directly at the competition site.
+                      </p>
+
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="image sports running">
+                <div class="date">
+                  <strong>30 / January</strong>
+                  <br>2016</div>
+                <p>
+                  <strong>Running</strong>
+                </p>
+              </div>
+              <div class="text">
+                <h5>Pioneer Camp Trail 2016</h5>
+                <p>A small text that says something about the event.</p>
+                <div class="card-infos">
+                  <p>
+                    <span class="icon-clock"></span>12:00</p>
+                  <p>
+                    <span class="icon-map"></span>Moscow</p>
+                  <p>
+                    <span class="icon-fee"></span>Fee</p>
+                </div>
+                <button type="button" name="button">See more</button>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="image sports running">
+                <div class="date">
+                  <strong>30 / January</strong>
+                  <br>2016</div>
+                <p>
+                  <strong>Running</strong>
+                </p>
+              </div>
+              <div class="text">
+                <h5>Pioneer Camp Trail 2016</h5>
+                <p>A small text that says something about the event.</p>
+                <div class="card-infos">
+                  <p>
+                    <span class="icon-clock"></span>12:00</p>
+                  <p>
+                    <span class="icon-map"></span>Moscow</p>
+                  <p>
+                    <span class="icon-fee"></span>Fee</p>
+                </div>
+                <button type="button" name="button">See more</button>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="image sports running">
+                <div class="date">
+                  <strong>30 / January</strong>
+                  <br>2016</div>
+                <p>
+                  <strong>Running</strong>
+                </p>
+              </div>
+              <div class="text">
+                <h5>Pioneer Camp Trail 2016</h5>
+                <p>A small text that says something about the event.</p>
+                <div class="card-infos">
+                  <p>
+                    <span class="icon-clock"></span>12:00</p>
+                  <p>
+                    <span class="icon-map"></span>Moscow</p>
+                  <p>
+                    <span class="icon-fee"></span>Fee</p>
+                </div>
+                <button type="button" name="button">See more</button>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="image sports running">
+                <div class="date">
+                  <strong>30 / January</strong>
+                  <br>2016</div>
+                <p>
+                  <strong>Running</strong>
+                </p>
+              </div>
+              <div class="text">
+                <h5>Pioneer Camp Trail 2016</h5>
+                <p>A small text that says something about the event.</p>
+                <div class="card-infos">
+                  <p>
+                    <span class="icon-clock"></span>12:00</p>
+                  <p>
+                    <span class="icon-map"></span>Moscow</p>
+                  <p>
+                    <span class="icon-fee"></span>Fee</p>
+                </div>
+                <button type="button" name="button">See more</button>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="image sports running">
+                <div class="date">
+                  <strong>30 / January</strong>
+                  <br>2016</div>
+                <p>
+                  <strong>Running</strong>
+                </p>
+              </div>
+              <div class="text">
+                <h5>Pioneer Camp Trail 2016</h5>
+                <p>A small text that says something about the event.</p>
+                <div class="card-infos">
+                  <p>
+                    <span class="icon-clock"></span>12:00</p>
+                  <p>
+                    <span class="icon-map"></span>Moscow</p>
+                  <p>
+                    <span class="icon-fee"></span>Fee</p>
+                </div>
+                <button type="button" name="button">See more</button>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="image sports running">
+                <div class="date">
+                  <strong>30 / January</strong>
+                  <br>2016</div>
+                <p>
+                  <strong>Running</strong>
+                </p>
+              </div>
+              <div class="text">
+                <h5>Pioneer Camp Trail 2016</h5>
+                <p>A small text that says something about the event.</p>
+                <div class="card-infos">
+                  <p>
+                    <span class="icon-clock"></span>12:00</p>
+                  <p>
+                    <span class="icon-map"></span>Moscow</p>
+                  <p>
+                    <span class="icon-fee"></span>Fee</p>
+                </div>
+                <button type="button" name="button">See more</button>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="image sports running">
+                <div class="date">
+                  <strong>30 / January</strong>
+                  <br>2016</div>
+                <p>
+                  <strong>Running</strong>
+                </p>
+              </div>
+              <div class="text">
+                <h5>Pioneer Camp Trail 2016</h5>
+                <p>A small text that says something about the event.</p>
+                <div class="card-infos">
+                  <p>
+                    <span class="icon-clock"></span>12:00</p>
+                  <p>
+                    <span class="icon-map"></span>Moscow</p>
+                  <p>
+                    <span class="icon-fee"></span>Fee</p>
+                </div>
+                <button type="button" name="button">See more</button>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="image sports running">
+                <div class="date">
+                  <strong>30 / January</strong>
+                  <br>2016</div>
+                <p>
+                  <strong>Running</strong>
+                </p>
+              </div>
+              <div class="text">
+                <h5>Pioneer Camp Trail 2016</h5>
+                <p>A small text that says something about the event.</p>
+                <div class="card-infos">
+                  <p>
+                    <span class="icon-clock"></span>12:00</p>
+                  <p>
+                    <span class="icon-map"></span>Moscow</p>
+                  <p>
+                    <span class="icon-fee"></span>Fee</p>
+                </div>
+                <button type="button" name="button">See more</button>
+              </div>
+            </div>
+
+            <div class="single-index-btn">
+              <button type="button" name="button" class="btn-full">See all Events</button>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <footer>
+        <div class="footer-back">
+          <div class="content">
+            <section>
+              <h5>Events4Sport</h5>
+              <p>
+                Lorem ipsum dolor sit amet Consectetur adipiscing elit Vivamus quis lorem massa Proin suscipit ultrices urna Ut ullamcorper.
+              </p>
+            </section>
+            <section>
+              <h5>Create your Sport Event</h5>
+              <p>
+                If you want to <a href="#">create your sport event</a> is easy. Just create your account and share more events with us.
+              </p>
+            </section>
+            <section>
+              <h5>Follow us</h5>
+              <p>
+                Make sure to be up-to-date with all sports event of your interests. Follow us!
+              </p>
+              <div class="social-icons">
+                <a href="#"><span class="icon-vk"></span></a>
+                <a href="#"><span class="icon-facebook"></span></a>
+                <a href="#"><span class="icon-youtube"></span></a>
+                <a href="#"><span class="icon-twitter"></span></a>
+              </div>
+            </section>
+            <section>
+              <h5>Contact</h5>
+              <p>
+                If you have any questions, please contact us.
+                <!-- support@events4sport.com -->
+                <button type="button" name="button" class="btn-full">Send E-mail</button>
+              </p>
+            </section>
+          </div>
+        </div>
+        <div class="signature">
+          <span>© 2015 - Events4Sport</span>
+        </div>
+      </footer>
+    </div>
+
+    <div id="loader" class="pageload-overlay" data-opening="M 0,0 80,-10 80,60 0,70 0,0" data-closing="M 0,-10 80,-20 80,-10 0,0 0,-10">
+      <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 80 60" preserveAspectRatio="none">
+        <path d="M 0,70 80,60 80,80 0,80 0,70" />
+      </svg>
+    </div>
+
+  </div>
+  <script src="assets/javascripts/jquery-1.12.0.min.js"></script>
+  <script src="assets/javascripts/refills.js"></script>
+  <script src="assets/javascripts/classie.js"></script>
+  <script src="assets/javascripts/loader.js"></script>
+
+
+</body>
+
+</html>
