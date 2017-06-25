@@ -1,0 +1,91 @@
+footer {
+  position             : relative;
+  height               : 100%;
+  background           : url(../images/cycle.jpg);
+  background-repeat    : no-repeat;
+  background-size      : cover;
+  background-position-y: center;
+  color                : $color-white;
+  line-height          : 1.5em;
+  margin-top           : 2em;
+
+  .footer-back {
+    background: $color-black-alpha;
+    height    : 100%;
+
+    .content {
+      padding: 0 2em;
+      @include outer-container;
+
+      section {
+        @include media(min-width 769px) {
+          @include span-columns(3);
+        }
+
+        @include media(max-width 768px) {
+          @include span-columns(6);
+          @include omega(2n);
+        }
+        padding: 2em 0 0;
+      }
+    }
+  }
+
+  a {
+    color          : $color-white;
+    text-decoration: underline;
+  }
+
+  .social-icons {
+    a {
+      text-transform: uppercase;
+      margin        : 0 .5em 0 0;
+      @include transition(all 0.3s linear);
+
+      span::before {
+        content            : "";
+        display            : inline-block;
+        width              : 28px;
+        height             : 28px;
+        background         : url(../images/sprite.svg);
+        background-repeat  : no-repeat;
+        background-position: left top;
+        background-size    : 60px 119px;
+      }
+
+      .icon-vk::before {
+        background-position: -2px 2px;
+      }
+
+      .icon-facebook::before {
+        background-position: 0 -87px;
+      }
+
+      .icon-youtube::before {
+        background-position: 0 -27px;
+      }
+
+      .icon-twitter::before {
+        background-position: 0 -57px;
+      }
+
+      &:last-child {
+        color   : $color-white;
+        position: relative;
+      }
+
+      &:hover {
+        color: $color-blue-dark;
+      }
+    }
+  }
+
+  .signature {
+    // @include outer-container;
+    background: $color-white;
+    text-align: center;
+    font-size : 1em;
+    padding   : 1em 0;
+    color     : $color-blue;
+  }
+}

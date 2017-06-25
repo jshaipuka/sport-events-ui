@@ -1,0 +1,272 @@
+body {
+  margin    : 0;
+  background: $color-background-light;
+}
+
+#return-to-top {
+  position     : fixed;
+  bottom       : 45px;
+  right        : 20px;
+  background   : rgba(0, 0, 0, 0.7);
+
+  // background-image: url(../images/arrow-up.svg);
+  width        : 50px;
+  height       : 50px;
+  display      : block;
+  border-radius: 35px;
+  display      : none;
+  z-index      : 100;
+  @include transition(all 0.3s ease);
+
+  span {
+    display            : block;
+    margin             : 1em auto;
+    height             : 20px;
+    width              : 50px;
+    background         : url(../images/arrow-up.svg);
+    background-repeat  : no-repeat;
+    background-position: center;
+    @include transition(all 0.3s ease);
+  }
+
+  &:hover {
+    background: rgba(0, 0, 0, 0.9);
+  }
+}
+
+.main-content {
+  @include outer-container;
+
+  h3 {
+    padding   : 20px 0;
+    text-align: center;
+  }
+
+  .ad-h-tablet {
+    @include media(min-width 769px) {
+      display: none;
+    }
+
+    @include media(max-width 768px) {
+      display: table;
+    }
+
+    @include media(max-width 524px) {
+      display: none;
+    }
+    background: #000;
+    display   : table;
+    height    : 90px;
+    width     : 728px;
+    margin    : 20px auto;
+  }
+
+  .ad-h-mobile {
+    @include media(min-width 769px) {
+      display: none;
+    }
+
+    @include media(max-width 768px) {
+      display: none;
+    }
+
+    @include media(max-width 524px) {
+      display: table;
+    }
+    background: #000;
+    display   : table;
+    height    : 100px;
+    width     : 320px;
+    margin    : 10px auto;
+  }
+
+  .content {
+    padding: 0 1em;
+    @include media(min-width 769px) {
+      @include span-columns(9);
+      @include omega();
+    }
+
+    @include media(max-width 768px) {
+      @include span-columns(8);
+      @include omega();
+    }
+
+    @include media(max-width 524px) {
+      @include span-columns(12);
+      @include omega();
+    }
+
+    .ad-horizontal {
+      @include media(max-width 768px) {
+        display: none;
+      }
+      background   : #000;
+      height       : 90px;
+      width        : 728px;
+      margin-bottom: 20px;
+    }
+
+    div {
+      .card {
+        @include card-sport;
+
+        @include media(min-width 769px) {
+          @include span-columns(3 of 9);
+          @include omega(3n);
+        }
+
+        @include media(max-width 768px) {
+          @include span-columns(4 of 8);
+          @include omega(2n);
+
+          &:nth-last-child(2) {
+            display: none;
+          }
+        }
+
+        @include media(max-width 524px) {
+          @include span-columns(6 of 12);
+          @include omega(2n);
+
+          &:nth-last-child(2) {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+
+  .text {
+    padding: 1em;
+
+    .card-infos {
+      text-align   : left;
+      margin-bottom: 15px;
+
+      p {
+        margin     : 0;
+        line-height: 1.5em;
+
+        span {
+          top     : 2px;
+          position: relative;
+        }
+      }
+    }
+
+    span::before {
+      content            : "";
+      display            : inline-block;
+      width              : 16px;
+      height             : 18px;
+      background         : url(../images/icon-cards-sprite.svg);
+      background-repeat  : no-repeat;
+      background-position: left top;
+      background-size    : 23px 66px;
+    }
+
+    .icon-clock::before {
+      background-position: -3px 0;
+    }
+
+    .icon-map::before {
+      background-position: -3px -22px;
+    }
+
+    .icon-fee::before {
+      background-position: -3px -43px;
+    }
+  }
+
+  .single-input {
+    margin-bottom: 1em;
+
+    @include media(min-width 769px) {
+      @include span-columns(3 of 9);
+      @include omega(3n);
+    }
+
+    @include media(max-width 768px) {
+      @include span-columns(4 of 8);
+      @include omega(2n);
+      &:nth-last-child(3) {
+        @include span-columns(8 of 8);
+      }
+    }
+
+    @include media(max-width 524px) {
+      @include span-columns(12 of 12);
+      @include omega(2n);
+    }
+
+  }
+
+  .single-input-full {
+    margin-bottom: 1em;
+  }
+
+  .single-input-btn {
+    @include span-columns(3 of 9);
+    @include shift(6);
+  }
+
+  .single-index-btn {
+    @include span-columns(3 of 9);
+    @include shift(3);
+  }
+}
+
+.wrap-content {
+  display: flex;
+}
+
+.related-events {
+  @include span-columns(12);
+  display: block;
+
+  hr {
+    border: 1px solid $color-gray-light;
+    margin: 1em 0 0;
+  }
+}
+
+// single sport page
+.card-related {
+  @include card-sport;
+
+  @include media(min-width 769px) {
+    @include span-columns(3 of 12);
+  }
+}
+.card-single-text{
+  .card{
+    margin-right: 2em !important;
+
+    @include media(min-width 769px) {
+      @include span-columns(3 of 9);
+    }
+
+    @include media(max-width 768px) {
+      @include span-columns(4 of 8);
+    }
+
+    @include media(max-width 524px) {
+      @include span-columns(12 of 12);
+      @include omega(2n);
+    }
+
+  }
+}
+.card-related{
+
+  @include media(max-width 768px) {
+    @include span-columns(6 of 12);
+    @include omega(2n);
+  }
+
+  @include media(max-width 524px) {
+    @include span-columns(6 of 12);
+    @include omega(2n);
+  }
+}

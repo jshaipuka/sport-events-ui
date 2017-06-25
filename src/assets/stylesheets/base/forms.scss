@@ -1,0 +1,168 @@
+input,
+label,
+select,
+textarea {
+  display    : inline-block;
+  font-family: $font-family-light;
+  font-size  : 1em;
+  height     : 2.5em;
+  width      : 100%;
+  padding    : 0 0.5em;
+  outline    : $color-blue;
+  // @include appearance(none);
+  @include placeholder {
+    color: $color-gray;
+  }
+}
+input,
+select,
+textarea {
+  border: 1px solid $color-white;
+}
+textarea {
+  height: 6em;
+  resize: vertical;
+}
+
+.forgot{
+  border: 1px solid $color-error;
+}
+
+input[type=checkbox] {
+  border : 1px solid $color-white;
+  height : auto;
+  width  : auto;
+  padding: 0;
+}
+.badge {
+  @include badge;
+}
+//dropdown
+.dropdown {
+  // line-height: $base-line-height;
+  font-family: $font-family-light;
+  .dropdown-container {
+    display   : inline-block;
+    position  : relative;
+    text-align: left;
+    width     : 100%;
+  }
+  .dropdown-button {
+    background : $color-white;
+    border     : 1px solid $color-white;
+    color      : $color-gray;
+    cursor     : pointer;
+    line-height: 2.4em;
+    margin     : 0;
+    padding    : 0 0.5em;
+    position   : relative;
+    @include media($large-screen) {
+      font-size: 1em;
+      padding  : 0 0.5em;
+    }
+  }
+  .dropdown-button:hover {
+    background-color: $dropdown-background-hover;
+  }
+  .dropdown-button:after {
+    color   : $color-blue;
+    content : "\25BE";
+    display : block;
+    position: absolute;
+    right   : 1.2em;
+    top     : $dropdown-arrow-top-distance;
+  }
+  .dropdown-menu {
+    @include transition (all 0.2s ease-in-out);
+    background: $color-white;
+    border    : 1px solid $color-blue;
+    // box-shadow: 0 2px 2px transparentize(black, 0.8);
+    box-shadow: $drop-shadow;
+    cursor    : pointer;
+    display   : none;
+    margin    : 0;
+    overflow  : show;
+    padding   : 0;
+    position  : absolute;
+    right     : 0;
+    top       : $dropdown-distance-from-menu;
+    width     : 100%;
+    z-index   : 99999;
+    &:before {
+      @include position(absolute, 0 0.5em 0 0);
+      color         : $color-white;
+      content       : "\25b2";
+      font-size     : 1.2em;
+      text-align    : right;
+      pointer-events: none;
+      text-shadow   : 0 -2px 2px transparentize(black, 0.7);
+      top           : -0.8em;
+    }
+  }
+  .dropdown-menu li {
+    color     : $color-blue;
+    list-style: none;
+    padding   : 0.5em;
+  }
+  .dropdown-menu li:hover {
+    background: $color-background-light;
+    color     : $color-blue;
+  }
+  .show-menu {
+    display: block;
+  }
+}
+//datepicker
+#datepicker {
+  background           : url("../images/icon-calendar.svg") no-repeat right center $color-white;
+  background-size      : 1.2em;
+  background-position-x: 96%;
+  cursor               : pointer;
+}
+.ui-datepicker {
+  background: $color-white;
+  width     : 15.7em;
+  .ui-datepicker-header {
+    .ui-datepicker-prev,
+    .ui-datepicker-next {
+      width : 20px;
+      margin: 5px auto;
+      cursor: pointer;
+    }
+    .ui-datepicker-prev {
+      @include triangle(15px, $color-blue, left);
+    }
+    .ui-datepicker-next {
+      @include triangle(15px, $color-blue, right);
+    }
+  }
+  td{
+    a{
+      color: $color-blue;
+      &:hover{
+        color: $color-white;
+        background: $color-blue-dark;
+      }
+    }
+  }
+  .ui-datepicker-prev-hover {
+    left: 2px;
+    top : 2px;
+  }
+  .ui-datepicker-next-hover {
+    right: 2px;
+    top  : 2px;
+  }
+  .ui-state-highlight {
+    background: $color-blue;
+    color     : $color-white;
+  }
+}
+
+//timepicker
+#timepicker-event {
+  background-image   : url("../images/icon-cards-sprite.svg");
+  background-repeat  : no-repeat;
+  background-position: right 3px;
+  background-size    : 43px 80px;
+}

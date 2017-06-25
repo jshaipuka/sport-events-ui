@@ -1,0 +1,43 @@
+// Typography
+$font-family-base: OpenSansRegular, $helvetica;
+$font-family-light: OpenSansLight, $helvetica;
+$font-family-title: 'Amatic SC', $helvetica;
+$font-title-weight: 600;
+// Font Sizes
+$font-size-base: 0.9em;
+$font-size-small: $font-size-base / 2;
+$font-size-title: $font-size-base * 4;
+$font-size-title-h3: $font-size-base * 3;
+$font-size-title-h5: $font-size-base * 2;
+// Border
+$border-radius-box: 0;
+// Colors
+$color-blue: #2c97d3;
+$color-blue-dark: #00579b;
+$color-background-light: #f1f1f1;
+$color-white: #fff;
+$color-gray: #9e9e9e;
+$color-gray-light: #e5e5e5;
+$color-black-alpha: rgba(0,0,0,.8);
+$color-blue-alpha: rgba(44,151,221,.8);
+$color-white-alpha: rgba(225,225,225,.9);
+$color-error: #D50000;
+$drop-shadow: 0 2px 8px 0 rgba(#000, .1);
+// Dropdown
+$base-border-color: gainsboro !default;
+$base-border-radius: 3px !default;
+$base-line-height: 1.5em !default;
+$base-background-color: white !default;
+$dark-gray: #333 !default;
+$large-screen: em(860) !default;
+$base-font-color: $dark-gray !default;
+$dropdown-color: $base-font-color;
+$dropdown-description-color: lighten($dropdown-color, 40%);
+$dropdown-border: 1px solid silver;
+$dropdown-background: $base-background-color;
+$dropdown-background-hover: darken($dropdown-background, 3%);
+$dropdown-inner-border: 1px solid silver;
+$dropdown-height: 2.9em;
+$dropdown-padding: 0.5em;
+$dropdown-distance-from-menu: 45px;
+$dropdown-arrow-top-distance: 0;

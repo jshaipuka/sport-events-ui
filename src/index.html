@@ -1,14 +1,41 @@
 <!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>SportEvents</title>
-  <base href="/">
+<html>
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
+<head>
+    <meta charset="utf-8">
+    <title>SportEvents</title>
+    <base href="/">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+    <!-- <link rel="stylesheet" type="text/css" href="assets/stylesheets/plugins/loader/normalize.css" /> -->
+    <link rel="stylesheet" type="text/css" href="assets/stylesheets/plugins/loader/component.css" />
+    <link rel="stylesheet" href="assets/stylesheets/style.css">
+    <script src="assets/javascripts/snap.svg-min.js"></script>
 </head>
+
 <body>
-  <se-root></se-root>
+    <div id="pagewrap" class="pagewrap">
+
+        <!-- <div class="container show" id="page-1"></div> -->
+
+        <div class="container" id="page-2">
+            <se-root></se-root>
+        </div>
+
+        <div id="loader" class="pageload-overlay" data-opening="M 0,0 80,-10 80,60 0,70 0,0" data-closing="M 0,-10 80,-20 80,-10 0,0 0,-10">
+            <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 80 60" preserveAspectRatio="none">
+                <path d="M 0,70 80,60 80,80 0,80 0,70" />
+            </svg>
+        </div>
+
+    </div>
+
+    <script src="assets/javascripts/jquery-1.12.0.min.js"></script>
+    <script src="assets/javascripts/refills.js"></script>
+    <script src="assets/javascripts/classie.js"></script>
+    <script src="assets/javascripts/loader.js"></script>
 </body>
+
 </html>
