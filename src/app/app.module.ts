@@ -1,18 +1,26 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpModule } from '@angular/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { EventComponent } from './event/event.component';
+
+import { EventService } from './shared/services/event.service';
+import { TruncatePipe } from './shared/pipes/truncate.pipe';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        EventComponent,
+        TruncatePipe
+    ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        HttpModule
+    ],
+    providers: [EventService],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }
