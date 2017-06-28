@@ -9,12 +9,19 @@ import { Pipe, PipeTransform } from '@angular/core';
  *   formats to: some reall...
 */
 @Pipe({
-  name: 'truncate'
+    name: 'truncate'
 })
 export class TruncatePipe implements PipeTransform {
 
-  transform(text: string, length: number = 140): string {
-    return text.slice(0, length) + '...';
-  }
+    transform(text: string, length: number = 140): string {
+        return text.length <= length ? text : this.trimDots(text.slice(0, length)) + '...';
+    }
+
+    private trimDots(text: string): string {
+        while (text.endsWith('.')) {
+            return this.trimDots(text.slice(0, text.length - 1));
+        }
+        return text;
+    }
 
 }
