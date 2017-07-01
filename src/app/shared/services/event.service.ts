@@ -1,18 +1,25 @@
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import { Event } from '../models/event';
+import { Config } from '../../app.config';
 
 import 'rxjs/add/operator/toPromise';
 
 @Injectable()
 export class EventService {
-    private URL = 'http://localhost:9000/api/events?sportFiltersIds=18,19,3&cityFiltersIds=2&dateInterval=past';
-
     constructor(private http: Http) { }
 
-    list(): Promise<Event[]> {
-        return this.http.get(this.URL).toPromise()
-            .then(response => response.json()['events'])
+    list(bottomEventId?: number): Promise<{ events: Event[], conditionToEventsNumber: any, willBeMoreEvents: boolean }> {
+        const base_url = `${Config.API_URL}/events?sportFiltersIds=18,19,3&cityFiltersIds=2&dateInterval=past`;
+        const url = bottomEventId ? `${base_url}&bottomEventId=${bottomEventId}` : base_url;
+        return this.http.get(url).toPromise()
+            .then(response => response.json())
+            .catch(this.handleError);
+    }
+
+    get(id: number): Promise<Event> {
+        return this.http.get(`${Config.API_URL}/events/${id}`).toPromise()
+            .then(response => response.json())
             .catch(this.handleError);
     }
 
