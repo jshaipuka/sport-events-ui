@@ -9,6 +9,7 @@ import { EventComponent } from './event/event.component';
 import { EventDetailComponent } from './event-detail/event-detail.component';
 import { FilterComponent } from './filter/filter.component';
 import { SubscriptionComponent } from './subscription/subscription.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 import { EventService } from './shared/services/event.service';
 import { FilterService } from './shared/services/filter.service';
@@ -22,6 +23,7 @@ import { TruncatePipe } from './shared/pipes/truncate.pipe';
         EventDetailComponent,
         FilterComponent,
         SubscriptionComponent,
+        PageNotFoundComponent,
         TruncatePipe
     ],
     imports: [
