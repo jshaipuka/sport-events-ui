@@ -8,8 +8,8 @@ describe('TruncatePipe', () => {
     });
 
     it('Should truncate text by default with no explicit limit provided', () => {
-        const text = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque interdum rutrum sodales. Nullam mattis fermentum libero, non volutpat Lorem ipsum dolor sit amet.';
-        expect(pipe.transform(text)).toEqual('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque interdum rutrum sodales. Nullam mattis fermentum libero, non volutpat ...');
+        const text = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque interdum rutrum sodales. Nullam mattis fermentum libero, non volutpat Lorem ipsum dolor sit amet.'; // tslint:disable-line:max-line-length
+        expect(pipe.transform(text)).toEqual(`Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque interdum rutrum sodales. Nullam mattis fermentum libero, non volutpat ...`); // tslint:disable-line:max-line-length
     });
 
     it('Should truncate text with limit provided', () => {
