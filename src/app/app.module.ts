@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
 
 import { AppRoutingModule } from './app-routing.module';
+import { LoginModule } from './login/login.module';
 
 import { AppComponent } from './app.component';
 import { EventComponent } from './event/event.component';
@@ -29,7 +30,8 @@ import { TruncatePipe } from './shared/pipes/truncate.pipe';
     imports: [
         BrowserModule,
         AppRoutingModule,
-        HttpModule
+        HttpModule,
+        LoginModule
     ],
     providers: [EventService, FilterService],
     bootstrap: [AppComponent]
