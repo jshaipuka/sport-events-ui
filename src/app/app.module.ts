@@ -7,6 +7,8 @@ import { AppComponent } from './app.component';
 import { EventComponent } from './event/event.component';
 
 import { EventService } from './shared/services/event.service';
+import { FilterService } from './shared/services/filter.service';
+
 import { TruncatePipe } from './shared/pipes/truncate.pipe';
 
 @NgModule({
@@ -20,7 +22,7 @@ import { TruncatePipe } from './shared/pipes/truncate.pipe';
         AppRoutingModule,
         HttpModule
     ],
-    providers: [EventService],
+    providers: [EventService, FilterService],
     bootstrap: [AppComponent]
 })
 export class AppModule { }
