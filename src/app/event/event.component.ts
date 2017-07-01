@@ -9,11 +9,23 @@ import { EventService } from '../shared/services/event.service';
 })
 export class EventComponent implements OnInit {
     events: Event[];
+    loadMore: boolean;
 
     constructor(private eventService: EventService) { }
 
     ngOnInit() {
-        this.eventService.list().then(events => this.events = events);
+        this.eventService.list().then(data => {
+            this.events = data.events;
+            this.loadMore = data.willBeMoreEvents;
+        });
+    }
+
+    onLoadMore() {
+        const nextId = this.events[this.events.length - 1].id;
+        this.eventService.list(nextId).then(data => {
+            this.events = this.events.concat(data.events)
+            this.loadMore = data.willBeMoreEvents;
+        });
     }
 
 }

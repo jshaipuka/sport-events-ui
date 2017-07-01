@@ -27,8 +27,11 @@
         </div>
     </div>
 
-    <div class="single-index-btn">
-        <button type="button" name="button" class="btn-full">See all Events</button>
+    <div class="single-index-btn" *ngIf="loadMore">
+        <button type="button" name="button" class="btn-full" (click)="onLoadMore()">See all Events</button>
+    </div>
+    <div *ngIf="!loadMore">
+        No events to display
     </div>
 
 </div>
