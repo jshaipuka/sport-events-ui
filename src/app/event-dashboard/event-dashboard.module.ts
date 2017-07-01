@@ -13,6 +13,7 @@ import { EventService } from './shared/services/event.service';
 import { FilterService } from './shared/services/filter.service';
 
 import { TruncatePipe } from './shared/pipes/truncate.pipe';
+import { CreateEventComponent } from './create-event/create-event.component';
 
 @NgModule({
     declarations: [
@@ -22,6 +23,7 @@ import { TruncatePipe } from './shared/pipes/truncate.pipe';
         FilterComponent,
         TruncatePipe,
         SubscriptionComponent,
+        CreateEventComponent,
     ],
     imports: [
         CommonModule,
