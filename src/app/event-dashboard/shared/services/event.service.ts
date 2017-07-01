@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import { Event } from '../models/event';
-import { Config } from '../../app.config';
+import { Config } from '../../../app.config';
 
 import 'rxjs/add/operator/toPromise';
 

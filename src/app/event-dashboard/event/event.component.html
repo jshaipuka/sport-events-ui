@@ -1,3 +1,8 @@
+<!-- Return to Top -->
+<a href="javascript:" id="return-to-top">
+    <span></span>
+</a>
+
 <div>
 
     <div class="card" *ngFor="let event of events">
@@ -23,7 +28,7 @@
                     <span class="icon-fee"></span>{{ event.price || "fee" }}
                 </p>
             </div>
-            <button type="button" name="button">See more</button>
+            <button type="button" name="button" (click)="onDetails(event)">See more</button>
         </div>
     </div>
 

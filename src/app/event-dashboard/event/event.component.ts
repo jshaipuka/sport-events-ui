@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Event } from '../shared/models/event';
 import { EventService } from '../shared/services/event.service';
 
@@ -11,7 +12,7 @@ export class EventComponent implements OnInit {
     events: Event[];
     loadMore: boolean;
 
-    constructor(private eventService: EventService) { }
+    constructor(private router: Router, private eventService: EventService) { }
 
     ngOnInit() {
         this.eventService.list().then(data => {
@@ -26,6 +27,10 @@ export class EventComponent implements OnInit {
             this.events = this.events.concat(data.events)
             this.loadMore = data.willBeMoreEvents;
         });
+    }
+
+    onDetails(event: Event){
+        this.router.navigate(['/event', event.id]);
     }
 
 }

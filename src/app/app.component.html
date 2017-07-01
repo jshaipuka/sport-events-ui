@@ -37,9 +37,9 @@
                 <img src="../assets/images/icon-menu.svg" alt="Menu" />
               </a>
                 <ul>
-                    <li><a href="index.html">Home</a></li>
+                    <li><a routerLink="/events" routerLinkActive="active">Home</a></li>
                     <li><a href="createevent.html">Create Event</a></li>
-                    <li><a href="login.html">Login</a></li>
+                    <li><a routerLink="/login" routerLinkActive="active-nav">Login</a></li>
                 </ul>
             </li>
         </div>
@@ -82,43 +82,7 @@
 
 </header>
 
-<!-- Return to Top -->
-<a href="javascript:" id="return-to-top">
-    <span></span>
-</a>
-
-<div class="main-content">
-
-    <h3>Upcoming Events</h3>
-
-    <div class="ad-h-tablet">
-        <span>Ads (728 x 90)</span>
-    </div>
-    <div class="ad-h-mobile">
-        <span>Ads (320 x 100)</span>
-    </div>
-        <!-- mobile -->
-    <div class="sidebar">
-        <se-filter></se-filter>
-        <se-subscription></se-subscription>
-
-        <div class="ad-vertical">
-        </div>
-
-    </div>
-
-
-
-    <div class="content">
-        <div class="ad-horizontal">
-            <span>Ads (728 x 90) </span>
-        </div>
-        <se-event></se-event>
-
-    </div>
-
-</div>
-
+<router-outlet></router-outlet>
 
 <footer>
     <div class="footer-back">

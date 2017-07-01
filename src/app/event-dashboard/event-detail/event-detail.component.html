@@ -1,0 +1,157 @@
+  <div class="main-content">
+    <h3>{{ event.sport.name }}</h3>
+
+    <!-- <div class="wrap-content"> -->
+
+      <div class="sidebar">
+        <div class="filters">
+          <h5>Subscribe</h5>
+          <p>Subscribe to new events</p>
+          <input type="text" name="name" value="" placeholder="Insert your e-mail">
+          <button type="button" name="button">Subscribe</button>
+        </div>
+
+        <div class="ad-vertical"></div>
+      </div>
+
+      <div class="content">
+
+        <div class="card-single-text">
+
+          <div class="card">
+            <div class="image sports running" [ngStyle]="{'background-image': 'url(assets/images/sports/' + event.sport.image + '160x160.png)'}">
+              <div class="date">
+                <strong>{{ event.startingDateUTC | date: "dd / MMMM" }}</strong>
+                <br>{{ event.startingDateUTC | date: "y" }}</div>
+              <p>
+                <strong>{{ event.sport.name }}</strong>
+              </p>
+            </div>
+            <div class="text">
+              <h5>{{ event.name }}</h5>
+              <p>{{ event.description | truncate: 50 }}</p>
+              <div class="card-infos">
+                <p>
+                  <span class="icon-clock"></span>{{ event.startingDateUTC | date: "HH:mm" }}</p>
+                <p>
+                  <span class="icon-map"></span>{{ event.city.name }}</p>
+                <p>
+                  <span class="icon-fee"></span>{{ event.price || "fee" }}</p>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+        <div>
+          {{ event.description }}
+        </div>
+
+      </div>
+
+    <!-- </div> -->
+
+
+    <div class="related-events">
+      <hr>
+      <h3>Related Events</h3>
+      <div class="card-related">
+        <div class="image sports running">
+          <div class="date">
+            <strong>30 / Jan</strong>
+            <br>2016</div>
+          <p>
+            <strong>Running</strong>
+          </p>
+        </div>
+        <div class="text">
+          <h5>Pioneer Camp Trail 2016</h5>
+          <p>A small text that says something about the event.</p>
+          <div class="card-infos">
+            <p>
+              <span class="icon-clock"></span>12:00</p>
+            <p>
+              <span class="icon-map"></span>Moscow</p>
+            <p>
+              <span class="icon-fee"></span>Fee</p>
+          </div>
+          <button type="button" name="button">See Event</button>
+        </div>
+      </div>
+
+      <div class="card-related">
+        <div class="image sports running">
+          <div class="date">
+            <strong>30 / Jan</strong>
+            <br>2016</div>
+          <p>
+            <strong>Running</strong>
+          </p>
+        </div>
+        <div class="text">
+          <h5>Pioneer Camp Trail 2016</h5>
+          <p>A small text that says something about the event.</p>
+          <div class="card-infos">
+            <p>
+              <span class="icon-clock"></span>12:00</p>
+            <p>
+              <span class="icon-map"></span>Moscow</p>
+            <p>
+              <span class="icon-fee"></span>Fee</p>
+          </div>
+          <button type="button" name="button">See Event</button>
+        </div>
+      </div>
+
+      <div class="card-related">
+        <div class="image sports running">
+          <div class="date">
+            <strong>30 / Jan</strong>
+            <br>2016</div>
+          <p>
+            <strong>Running</strong>
+          </p>
+        </div>
+        <div class="text">
+          <h5>Pioneer Camp Trail 2016</h5>
+          <p>A small text that says something about the event.</p>
+          <div class="card-infos">
+            <p>
+              <span class="icon-clock"></span>12:00</p>
+            <p>
+              <span class="icon-map"></span>Moscow</p>
+            <p>
+              <span class="icon-fee"></span>Fee</p>
+          </div>
+          <button type="button" name="button">See Event</button>
+        </div>
+      </div>
+
+      <div class="card-related">
+        <div class="image sports running">
+          <div class="date">
+            <strong>30 / Jan</strong>
+            <br>2016</div>
+          <p>
+            <strong>Running</strong>
+          </p>
+        </div>
+        <div class="text">
+          <h5>Pioneer Camp Trail 2016</h5>
+          <p>A small text that says something about the event.</p>
+          <div class="card-infos">
+            <p>
+              <span class="icon-clock"></span>12:00</p>
+            <p>
+              <span class="icon-map"></span>Moscow</p>
+            <p>
+              <span class="icon-fee"></span>Fee</p>
+          </div>
+          <button type="button" name="button">See Event</button>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
