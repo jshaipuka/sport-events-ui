@@ -23,6 +23,7 @@ ng serve
 ## Production ready
 
 ```bash
+npm install # if not run yet
 ng build --prod
 ```
 This will create a `dist` folder. Deploy it to a server.
