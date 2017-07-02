@@ -10,7 +10,7 @@ export class EventService {
     constructor(private http: Http) { }
 
     list(bottomEventId?: number): Promise<{ events: Event[], conditionToEventsNumber: any, willBeMoreEvents: boolean }> {
-        const base_url = `${Config.API_URL}/events?sportFiltersIds=18,19,3&cityFiltersIds=2&dateInterval=past`;
+        const base_url = `${Config.API_URL}/events?limit=9&sportFiltersIds=18,19,3&cityFiltersIds=2&dateInterval=past`;
         const url = bottomEventId ? `${base_url}&bottomEventId=${bottomEventId}` : base_url;
         return this.http.get(url).toPromise()
             .then(response => response.json())
