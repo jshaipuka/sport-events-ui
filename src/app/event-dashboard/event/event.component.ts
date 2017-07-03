@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Event } from '../shared/models/event';
 import { EventService } from '../shared/services/event.service';
+import * as momentTimezone from 'moment-timezone';
 
 @Component({
     selector: 'se-event',
@@ -33,4 +34,7 @@ export class EventComponent implements OnInit {
         this.router.navigate(['/event', event.id]);
     }
 
+    formatDate(date, timezone, format){
+        return momentTimezone(date).tz(timezone).format(format);
+    }
 }

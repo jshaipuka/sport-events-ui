@@ -8,7 +8,7 @@
     <div class="card" *ngFor="let event of events">
         <div class="image sports running" [ngStyle]="{'background-image': 'url(assets/images/sports/' + event.sport.image + '160x160.png)'}">
             <div class="date">
-                <strong>{{ event.startingDateUTC | date: "dd / MMMM" }}</strong>
+                <strong>{{ formatDate(event.startingDateUTC, event.city.timezoneName, "DD / MMMM") }}</strong>
                 <br>{{ event.startingDateUTC | date: "y" }}</div>
             <p>
                 <strong>{{ event.sport.name }}</strong>
@@ -19,7 +19,7 @@
             <p>{{ event.description | truncate: 50 }}</p>
             <div class="card-infos">
                 <p>
-                    <span class="icon-clock"></span>{{ event.startingDateUTC | date: "HH:mm" }}
+                    <span class="icon-clock"></span>{{ formatDate(event.startingDateUTC, event.city.timezoneName, "HH:mm") }}
                 </p>
                 <p>
                     <span class="icon-map"></span>{{ event.city.name }}
