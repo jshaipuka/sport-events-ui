@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ReactiveFormsModule }   from '@angular/forms';
 import { EventDashboardRoutingModule } from './event-dashboard-routing.module';
 
 import { EventDashboardComponent } from './event-dashboard/event-dashboard.component';
@@ -27,6 +28,7 @@ import { CreateEventComponent } from './create-event/create-event.component';
     ],
     imports: [
         CommonModule,
+        ReactiveFormsModule,
         EventDashboardRoutingModule
     ],
     providers: [EventService, FilterService]

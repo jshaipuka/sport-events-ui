@@ -7,11 +7,21 @@ import 'rxjs/add/operator/toPromise';
 
 @Injectable()
 export class EventService {
+    private sportFiltersIds = '18,19,3';
+    private cityFiltersIds = '2';
+    private dateInterval = 'past';
+
     constructor(private http: Http) { }
 
-    list(bottomEventId?: number): Promise<{ events: Event[], conditionToEventsNumber: any, willBeMoreEvents: boolean }> {
-        const base_url = `${Config.API_URL}/events?limit=9&sportFiltersIds=18,19,3&cityFiltersIds=2&dateInterval=past`;
-        const url = bottomEventId ? `${base_url}&bottomEventId=${bottomEventId}` : base_url;
+    list(bottomEventId?: number, queryParams: any = {}, limit: number = 9): Promise<{ events: Event[], conditionToEventsNumber: any, willBeMoreEvents: boolean }> {
+        const { sportFiltersIds, cityFiltersIds, dateInterval } = queryParams;
+
+        let url = `${Config.API_URL}/events?limit=${limit}`;
+        url += `&sportFiltersIds=${sportFiltersIds || this.sportFiltersIds}`;
+        url += `&cityFiltersIds=${cityFiltersIds || this.cityFiltersIds}`;
+        url += `&dateInterval=${dateInterval || this.dateInterval}`;
+        url = bottomEventId ? `${url}&bottomEventId=${bottomEventId}` : url;
+
         return this.http.get(url).toPromise()
             .then(response => response.json())
             .catch(this.handleError);

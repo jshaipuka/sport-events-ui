@@ -31,41 +31,8 @@
 
 <div class="filters">
     <h5>Filter Events</h5>
-    <div class="input-search-select">
-        <div class="dropdown">
-            <div class="dropdown-container">
-                <p class="dropdown-button">Choose a Sport</p>
-                <ul class="dropdown-menu dropdown-select">
-                    <li *ngFor="let sport of sports">{{sport.name}} <span class="badge">??</span></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-
-    <h5>When</h5>
-    <button type="button" name="button">Past Events</button>
-    <button type="button" name="button">Upcoming Events</button>
-
-    <h5>Where</h5>
-
-    <div class="input-search-select">
-        <div class="dropdown">
-            <div class="dropdown-container">
-                <p class="dropdown-button">Choose a City</p>
-                <ul class="dropdown-menu dropdown-select">
-                    <li *ngFor="let city of cities">{{city.name}}</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-
-    <button type="button" name="button" class="btn-full">Filter</button>
-</div>
-
-<div class="filters">
-    <h5>Filter Events</h5>
     <label><input type="checkbox" name="checkbox" value="value">Select All</label>
-    <label *ngFor="let sport of sports"><input type="checkbox" name="checkbox" value="{{sport.id}}">{{sport.name}} <span class="badge">??</span></label>
+    <label *ngFor="let sport of sports"><input type="checkbox" name="checkbox" value="{{sport.id}}">{{sport.name}} <span class="badge" style="float:right;">??</span></label>
 
     <h5>When</h5>
     <button type="button" name="button">Past Events</button>
@@ -84,5 +51,4 @@
         </div>
     </div>
 
-    <button type="button" name="button" class="btn-full">Filter</button>
 </div>

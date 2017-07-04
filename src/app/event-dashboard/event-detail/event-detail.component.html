@@ -1,5 +1,5 @@
   <div class="main-content">
-    <h3>{{ event.sport.name }}</h3>
+    <h3>{{ event.name }}</h3>
 
     <!-- <div class="wrap-content"> -->
 
@@ -37,9 +37,7 @@
 
         </div>
 
-        <div>
-          {{ event.description }}
-        </div>
+        <div [innerHTML]="event.description"></div>
 
       </div>
 
