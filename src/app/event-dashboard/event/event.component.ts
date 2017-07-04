@@ -31,7 +31,8 @@ export class EventComponent implements OnInit {
     }
 
     onDetails(event: Event){
-        this.router.navigate(['/event', event.id]);
+        const { id, transliteratedName } = event;
+        this.router.navigate(['/event', id, transliteratedName ]);
     }
 
     formatDate(date, timezone, format){
