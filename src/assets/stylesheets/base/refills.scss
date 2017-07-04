@@ -1,0 +1,262 @@
+// Sliding Panel
+.sliding-panel-content {
+  $action-color                  : #477DCA !default;
+  $dark-gray                     : #333 !default;
+  $sliding-panel-border-color    : $dark-gray;
+  $sliding-panel-background      : lighten($sliding-panel-border-color, 5%);
+  $sliding-panel-color           : #fff;
+  $sliding-panel-border          : 1px solid $sliding-panel-border-color;
+  $sliding-panel-background-hover: $action-color;
+  $sliding-panel-color-hover     : #fff;
+  $sliding-panel-background-focus: lighten($sliding-panel-background, 5%);
+  @include position(fixed, 0px auto 0px 0px);
+  @include size(220px 100%);
+  @include transform(translateX(-220px));
+  @include transition(all 0.25s linear);
+
+  // background                     : $sliding-panel-background;
+  z-index                        : 999999;
+  overflow-y                     : auto;
+  -webkit-overflow-scrolling     : touch;
+
+  ul {
+    padding: 0;
+    margin : 0;
+  }
+
+  li {
+    list-style: none;
+  }
+
+  li a {
+    border-bottom  : $sliding-panel-border;
+    color          : $sliding-panel-color;
+    display        : block;
+    font-weight    : bold;
+    padding        : 1em;
+    text-decoration: none;
+
+    &:focus {
+      background-color: $sliding-panel-background-focus;
+    }
+
+    &:hover {
+      background-color: $sliding-panel-background-hover;
+      color           : $sliding-panel-color-hover;
+    }
+  }
+
+  &.is-visible {
+    @include transform(translateX(0));
+  }
+}
+
+.sliding-panel-fade-screen {
+  @include position(fixed, 0px 0px 0px 0px);
+  @include transition;
+  background: black;
+  opacity   : 0;
+  visibility: hidden;
+  z-index   : 999998;
+
+  &.is-visible {
+    opacity   : 0.4;
+    visibility: visible;
+  }
+}
+
+.sliding-panel-button {
+  @include media(min-width 525px) {
+    display: none;
+  }
+  padding    : 10px 16px;
+  display    : inline-block;
+  drop-shadow: $drop-shadow;
+  cursor     : pointer;
+  position   : absolute;
+  width      : 4em;
+  height     : 4em;
+  outline    : none;
+  top        : 26em;
+  margin-left: -1em !important;
+  z-index    : 9999;
+
+  img {
+    height: 1.3em;
+  }
+}
+
+// timepicker
+.ui-timepicker-wrapper{
+  width: 12em;
+}
+.ui-timepicker-list{
+  li{
+    color: $color-blue;
+  }
+}
+
+//modal
+.modal {
+  $base-border-color        : #dcdcdc !default;
+  $base-border-radius       : 3px !default;
+  $base-background-color    : #fff !default;
+  $base-font-size           : 1em !default;
+  $base-line-height         : 1.5em !default;
+  $action-color             : #477dca !default;
+  $dark-gray                : #333 !default;
+  $light-gray               : #ddd !default;
+  $medium-screen            : em(640) !default;
+  $large-screen             : em(860) !default;
+  $base-font-color          : $dark-gray !default;
+  $modal-padding            : 3em;
+  $modal-background         : $base-background-color;
+  $modal-close-color        : $light-gray;
+  $modal-image-height       : 135px;
+  $modal-image-width        : $modal-image-height;
+  $modal-trigger-image-width: 300px;
+
+  label {
+    cursor       : pointer;
+    margin-bottom: 0;
+    padding      : 0;
+  }
+
+  label img {
+    border-radius: $modal-trigger-image-width / 2;
+    display      : block;
+    max-width    : $modal-trigger-image-width;
+  }
+
+  .modal-state {
+    display: none;
+  }
+
+  .modal-trigger {
+    @extend button;
+    padding: 0.5em 1em !important;
+  }
+
+  .modal-fade-screen {
+
+    // overlay
+    @include transition(opacity 0.25s ease);
+    @include position(fixed, 0);
+    background-color: rgba(#000, 0.85);
+    opacity         : 0;
+    padding-top     : 0.6em;
+    text-align      : left;
+    visibility      : hidden;
+    z-index         : 99999999999;
+
+    @include media($large-screen) {
+      padding-top: 10em;
+    }
+
+    .modal-bg {
+      @include position(absolute, 0);
+      cursor: pointer;
+    }
+  }
+
+  .modal-close {
+    @include position(absolute, ($modal-padding /2) ($modal-padding /2) null null);
+    @include size(1.5em);
+    background: $modal-background;
+    cursor    : pointer;
+
+    &:after,
+    &:before {
+      @include position(absolute, 3px 3px 0 50%);
+      @include transform(rotate(45deg));
+      @include size(0.15em 1.5em);
+      background: $modal-close-color;
+      content   : '';
+      display   : block;
+      margin    : -3px 0 0 -1px;
+    }
+
+    &:hover:after,
+    &:hover:before {
+      background: darken($modal-close-color, 10%);
+    }
+
+    &:before {
+      @include transform(rotate(-45deg));
+    }
+  }
+
+  .modal-inner {
+    @include transition(opacity 0.25s ease);
+    background   : $modal-background;
+    border-radius: $base-border-radius;
+    margin-top: 0;
+    margin       : auto;
+    max-height   : 95%;
+    overflow     : auto;
+    padding      : $modal-padding / 2;
+    position     : relative;
+    width        : 95%;
+
+    @include media($medium-screen) {
+      max-height: 70%;
+      padding   : $modal-padding;
+      width     : 60%;
+    }
+
+    @include media($large-screen) {
+      width: 50%;
+    }
+
+    h1 {
+      color         : $base-font-color;
+      text-align    : left;
+      text-transform: capitalize;
+    }
+
+    .card{
+      margin-right: 1em !important;
+    }
+
+    p {
+      color      : $base-font-color;
+      line-height: $base-line-height;
+    }
+
+    .modal-intro {
+      margin: 0 0 1em;
+    }
+
+    .modal-content {
+      color: $base-font-color;
+
+      @include media($medium-screen) {
+        @include columns(2 8em);
+      }
+    }
+
+    a.cta {
+      color       : $base-background-color;
+      display     : inline-block;
+      margin-right: 0.5em;
+      margin-top  : 1em;
+
+      &:last-child {
+        padding: 0 2em;
+      }
+    }
+  }
+
+  .modal-state:checked + .modal-fade-screen {
+    opacity   : 1;
+    visibility: visible;
+  }
+
+  .modal-state:checked + .modal-fade-screen .modal-inner {
+    top: 0.5em;
+  }
+}
+
+.modal-open {
+  overflow: hidden;
+}

@@ -1,0 +1,25 @@
+button {
+  @extend input;
+  border    : 1px solid $color-blue !important;
+
+  // background: $color-white;
+  background: transparent;
+  color     : $color-blue;
+  cursor    : pointer;
+  @include transition(all .1s linear);
+
+  &:hover {
+    background: $color-blue;
+    color     : $color-white;
+  }
+}
+
+.btn-full {
+  background: $color-blue;
+  color     : $color-white;
+
+  &:hover {
+    background: $color-blue-dark;
+    cursor    : pointer;
+  }
+}
