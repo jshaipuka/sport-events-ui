@@ -4,12 +4,14 @@
 <nav class="js-menu sliding-panel-content">
     <div class="filters-mobile">
         <h5>Filter Events</h5>
-        <label><input type="checkbox" name="checkbox" value="value">Select All</label>
-        <label *ngFor="let sport of sports"><input type="checkbox" name="checkbox" value="{{sport.id}}">{{sport.name}}</label>
+        <label><input type="checkbox" name="checkbox" value="value">Сбросить фильтры</label>
+        <label *ngFor="let sport of sports">
+            <input type="checkbox" name="checkbox" value="{{sport.id}}" (click)="selectSport(sport.id)" [checked]="isSportSelected(sport.id)">{{sport.name}} <span class="badge" style="float:right;">??</span>
+        </label>
 
         <h5>When</h5>
-        <button type="button" name="button">Past Events</button>
-        <button type="button" name="button">Upcoming Events</button>
+        <button type="button" name="button" (click)="selectDateInterval('past')" [ngClass]="{'btn-full': isDateSelected('past')}">Past Events</button>
+        <button type="button" name="button" (click)="selectDateInterval('upcoming')" [ngClass]="{'btn-full': isDateSelected('upcoming')}">Upcoming Events</button>
 
         <h5>Where</h5>
 
@@ -31,12 +33,14 @@
 
 <div class="filters">
     <h5>Filter Events</h5>
-    <label><input type="checkbox" name="checkbox" value="value">Select All</label>
-    <label *ngFor="let sport of sports"><input type="checkbox" name="checkbox" value="{{sport.id}}">{{sport.name}} <span class="badge" style="float:right;">??</span></label>
+    <label><input type="checkbox" name="checkbox" value="value">Сбросить фильтры</label>
+    <label *ngFor="let sport of sports">
+        <input type="checkbox" name="checkbox" value="{{sport.id}}" (click)="selectSport(sport.id)" [checked]="isSportSelected(sport.id)">{{sport.name}} <span class="badge" style="float:right;">??</span>
+    </label>
 
     <h5>When</h5>
-    <button type="button" name="button">Past Events</button>
-    <button type="button" name="button">Upcoming Events</button>
+<button type="button" name="button" (click)="selectDateInterval('past')" [ngClass]="{'btn-full': isDateSelected('past')}">Past Events</button>
+    <button type="button" name="button" (click)="selectDateInterval('upcoming')" [ngClass]="{'btn-full': isDateSelected('upcoming')}">Upcoming Events</button>
 
     <h5>Where</h5>
 
@@ -45,7 +49,7 @@
             <div class="dropdown-container">
                 <p class="dropdown-button">Choose a City</p>
                 <ul class="dropdown-menu dropdown-select">
-                    <li *ngFor="let city of cities">{{city.name}}</li>
+                    <li *ngFor="let city of cities" (click)="selectCity(city.id)">{{city.name}}</li>
                 </ul>
             </div>
         </div>
