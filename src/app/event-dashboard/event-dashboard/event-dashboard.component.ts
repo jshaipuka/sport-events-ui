@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Config } from '../../app.config';
 
 @Component({
     selector: 'se-event-dashboard',
@@ -6,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
     styleUrls: ['./event-dashboard.component.scss']
 })
 export class EventDashboardComponent implements OnInit {
+    heading: string;
 
-    constructor() { }
+    private headings = {
+        past: 'Прошедшие события',
+        upcoming: 'Предстоящие события'
+    };
 
-    ngOnInit() { }
+    constructor(private route: ActivatedRoute) { }
+
+    ngOnInit() {
+        this.route.queryParams.subscribe(
+             (queryParam: any) =>
+                this.heading = this.headings[queryParam['dateInterval']] || this.headings[Config.DATE_INTERVAL]
+         );
+    }
 
 }
