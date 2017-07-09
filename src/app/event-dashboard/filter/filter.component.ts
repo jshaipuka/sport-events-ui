@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { FilterService } from '../shared/services/filter.service';
 import { City } from '../shared/models/city';
 import { Sport } from '../shared/models/sport';
@@ -12,6 +12,7 @@ import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 export class FilterComponent implements OnInit {
     cities: City[];
     sports: Sport[];
+    @Input() stats: any;
 
     private selectedSportIds: number[];
     private selectedCityIds: number[];

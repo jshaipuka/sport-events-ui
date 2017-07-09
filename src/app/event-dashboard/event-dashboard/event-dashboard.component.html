@@ -4,12 +4,12 @@
 
     <!-- mobile -->
     <div class="sidebar">
-        <se-filter></se-filter>
+        <se-filter [stats]="events.stats"></se-filter>
         <se-subscription></se-subscription>
     </div>
 
     <div class="content">
-        <se-event></se-event>
+        <se-event #events></se-event>
     </div>
 
 </div>

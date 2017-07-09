@@ -6,7 +6,7 @@
         <h5>Filter Events</h5>
         <label><input type="checkbox" name="checkbox" value="value" (click)="deselectAll()" [checked]="isDeselected()">Без фильтров</label>
         <label *ngFor="let sport of sports">
-            <input type="checkbox" name="checkbox" value="{{sport.id}}" (click)="selectSport(sport.id)" [checked]="isSportSelected(sport.id)">{{sport.name}} <span class="badge" style="float:right;">??</span>
+            <input type="checkbox" name="checkbox" value="{{sport.id}}" (click)="selectSport(sport.id)" [checked]="isSportSelected(sport.id)">{{sport.name}} <span class="badge" style="float:right;"*ngIf="this?.stats['sport_'+sport.id] ">{{ this?.stats['sport_'+sport.id]}}</span>
         </label>
 
         <h5>When</h5>
@@ -35,7 +35,7 @@
     <h5>Filter Events</h5>
     <label><input type="checkbox" name="checkbox" value="value" (click)="deselectAll()" [checked]="isDeselected()">Без фильтров</label>
     <label *ngFor="let sport of sports">
-        <input type="checkbox" name="checkbox" value="{{sport.id}}" (click)="selectSport(sport.id)" [checked]="isSportSelected(sport.id)">{{sport.name}} <span class="badge" style="float:right;">??</span>
+        <input type="checkbox" name="checkbox" value="{{sport.id}}" (click)="selectSport(sport.id)" [checked]="isSportSelected(sport.id)">{{sport.name}} <span class="badge" style="float:right;" *ngIf="this?.stats['sport_'+sport.id] ">{{ this?.stats['sport_'+sport.id]}}</span>
     </label>
 
     <h5>When</h5>

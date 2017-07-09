@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute, Router, ParamMap } from '@angular/router';
 import { Event } from '../shared/models/event';
 import { EventService } from '../shared/services/event.service';
@@ -19,6 +19,8 @@ export class EventComponent implements OnInit {
     events: Event[];
     loadMore: boolean;
     errorMessage: string;
+    stats: any;
+
     private queryParams: any;
 
     constructor(
@@ -45,6 +47,7 @@ export class EventComponent implements OnInit {
                 data => {
                     this.events = data.events;
                     this.loadMore = data.willBeMoreEvents;
+                    this.stats = data.conditionToEventsNumber;
                 },
                 error =>  this.errorMessage = <any>error
             );

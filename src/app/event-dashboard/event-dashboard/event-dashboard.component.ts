@@ -19,9 +19,9 @@ export class EventDashboardComponent implements OnInit {
 
     ngOnInit() {
         this.route.queryParams.subscribe(
-             (queryParam: any) =>
+            (queryParam: any) =>
                 this.heading = this.headings[queryParam['dateInterval']] || this.headings[Config.DATE_INTERVAL]
-         );
+        );
     }
 
 }
