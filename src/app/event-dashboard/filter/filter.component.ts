@@ -76,14 +76,26 @@ export class FilterComponent implements OnInit {
         this.navigate();
     }
 
+    deselectAll() {
+        this.queryParams = {
+            cityFiltersIds: undefined,
+            sportFiltersIds: undefined
+        };
+        this.navigate();
+    }
+
+    isDeselected() {
+        return !this.queryParams.cityFiltersIds && !this.queryParams.sportFiltersIds;
+    }
+
     isSportSelected(sportId: number){
         const index = this.selectedSportIds && this.selectedSportIds.indexOf(sportId);
-        return index && index !== -1;
+        return index !== -1;
     }
 
     isCitySelected(cityId: number){
         const index = this.selectedCityIds && this.selectedCityIds.indexOf(cityId);
-        return index && index !== -1;
+        return index !== -1;
     }
 
     isDateSelected(dateInterval: string){
