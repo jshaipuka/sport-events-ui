@@ -1,40 +1,59 @@
 import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
+import { Http, Response, URLSearchParams, RequestOptions } from '@angular/http';
 import { Event } from '../models/event';
 import { Config } from '../../../app.config';
-
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/operator/catch';
+import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/toPromise';
 
 @Injectable()
 export class EventService {
-    private sportFiltersIds = '18,19,3';
-    private cityFiltersIds = '2';
-    private dateInterval = 'past';
+    private base_url = `${Config.API_URL}/events`;
 
     constructor(private http: Http) { }
 
-    list(bottomEventId?: number, queryParams: any = {}, limit: number = 9): Promise<{ events: Event[], conditionToEventsNumber: any, willBeMoreEvents: boolean }> {
-        const { sportFiltersIds, cityFiltersIds, dateInterval } = queryParams;
+    list(bottomEventId?: number, queryParams: any = {}, limit: number = Config.EVENT_LIMIT): Observable<{ events: Event[], conditionToEventsNumber: any, willBeMoreEvents: boolean }> {
+        const { sportFiltersIds, cityFiltersIds, dateInterval = Config.DATE_INTERVAL } = queryParams;
 
-        let url = `${Config.API_URL}/events?limit=${limit}`;
-        url += `&sportFiltersIds=${sportFiltersIds || this.sportFiltersIds}`;
-        url += `&cityFiltersIds=${cityFiltersIds || this.cityFiltersIds}`;
-        url += `&dateInterval=${dateInterval || this.dateInterval}`;
-        url = bottomEventId ? `${url}&bottomEventId=${bottomEventId}` : url;
+        const myParams = new URLSearchParams();
+        myParams.append('limit', limit.toString());
+        myParams.append('sportFiltersIds', sportFiltersIds);
+        myParams.append('cityFiltersIds', cityFiltersIds);
+        myParams.append('dateInterval', dateInterval);
+        myParams.append('bottomEventId', bottomEventId && bottomEventId.toString());
 
-        return this.http.get(url).toPromise()
-            .then(response => response.json())
-            .catch(this.handleError);
+        const options = new RequestOptions({ params: myParams });
+
+        return this.http.get(this.base_url, options)
+            .map(this.extractData)
+            .catch(this.handleErrorObservable);
     }
 
     get(id: number): Promise<Event> {
         return this.http.get(`${Config.API_URL}/events/${id}`).toPromise()
-            .then(response => response.json())
+            .then(this.extractData)
             .catch(this.handleError);
+    }
+
+    private extractData(response: Response) {
+        return response.json() || {};
     }
 
     private handleError(error: any): Promise<any> {
         return Promise.reject(error.message || error);
+    }
+
+    private handleErrorObservable (error: Response | any) {
+        let errMsg: string;
+        if (error instanceof Response) {
+            const body = error.json() || '';
+            const err = body.error || JSON.stringify(body);
+            errMsg = `${error.status} - ${error.statusText || ''} ${err}`;
+        } else {
+            errMsg = error.message ? error.message : error.toString();
+        }
+        return Observable.throw(errMsg);
     }
 
 }
