@@ -3,11 +3,11 @@
 </button>
 <nav class="js-menu sliding-panel-content">
     <div class="filters-mobile">
-        <h5>Filter Events</h5>
+        <h5>Что</h5>
         <div class="input-search-select">
             <div class="dropdown">
                 <div class="dropdown-container">
-                    <p class="dropdown-button">Choose a Sport</p>
+                    <p class="dropdown-button">Выбрать вид спорта</p>
                     <ul class="dropdown-menu dropdown-select">
                         <li (click)="deselectAll(true)">Без фильтров</li>
                         <li *ngFor="let sport of sports" (click)="selectSport(sport.id, true)">{{sport.name}}</li>
@@ -16,16 +16,16 @@
             </div>
         </div>
 
-        <h5>When</h5>
-        <button type="button" name="button" (click)="selectDateInterval('past', true)" [ngClass]="{'btn-full': isDateSelected('past')}">Past Events</button>
-        <button type="button" name="button" (click)="selectDateInterval('upcoming', true)" [ngClass]="{'btn-full': isDateSelected('upcoming')}">Upcoming Events</button>
+        <h5>Когда</h5>
+        <button type="button" name="button" (click)="selectDateInterval('past', true)" [ngClass]="{'btn-full': isDateSelected('past')}">Прошедшие события</button>
+        <button type="button" name="button" (click)="selectDateInterval('upcoming', true)" [ngClass]="{'btn-full': isDateSelected('upcoming')}">Предстоящие события</button>
 
-        <h5>Where</h5>
+        <h5>Где</h5>
 
         <div class="input-search-select">
             <div class="dropdown">
                 <div class="dropdown-container">
-                    <p class="dropdown-button">Choose a City</p>
+                    <p class="dropdown-button">Выбрать город</p>
                     <ul class="dropdown-menu dropdown-select">
                         <li *ngFor="let city of cities" (click)="selectCity(city.id, true)">{{city.name}}</li>
                     </ul>
@@ -33,22 +33,22 @@
             </div>
         </div>
 
-        <button type="button" name="button" class="btn-full" (click)="onFilter()">Filter</button>
+        <button type="button" name="button" class="btn-full" (click)="onFilter()">Показать</button>
     </div>
 </nav>
 <div class="js-menu-screen sliding-panel-fade-screen"></div>
 
 <div class="filters">
-    <h5>Filter Events</h5>
+    <h5>Что</h5>
     <label><input type="checkbox" name="checkbox" value="value" (click)="deselectAll()" [checked]="isDeselected()">Без фильтров</label>
     <label *ngFor="let sport of sports">
         <input type="checkbox" name="checkbox" value="{{sport.id}}" (click)="selectSport(sport.id)" [checked]="isSportSelected(sport.id)">{{sport.name}} <span class="badge" style="float:right;" *ngIf="!this.stats || this.stats && this.stats['sport_'+sport.id]">{{ this.stats && this.stats['sport_'+sport.id]}}</span>
     </label>
 
-    <h5>When</h5>
-    <button type="button" name="button" (click)="selectDateInterval('past')" [ngClass]="{'btn-full': isDateSelected('past')}">Past Events</button>
-    <button type="button" name="button" (click)="selectDateInterval('upcoming')" [ngClass]="{'btn-full': isDateSelected('upcoming')}">Upcoming Events</button>
+    <h5>Когда</h5>
+    <button type="button" name="button" (click)="selectDateInterval('past')" [ngClass]="{'btn-full': isDateSelected('past')}">Прошедшие события</button>
+    <button type="button" name="button" (click)="selectDateInterval('upcoming')" [ngClass]="{'btn-full': isDateSelected('upcoming')}">Предстоящие события</button>
 
-    <h5>Where</h5>
+    <h5>Где</h5>
     <button *ngFor="let city of cities" type="button" name="button" (click)="selectCity(city.id)" [ngClass]="{'btn-full': isCitySelected(city.id)}">{{city.name}}</button>
 </div>
