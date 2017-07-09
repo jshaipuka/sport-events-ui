@@ -32,8 +32,8 @@ export class SubscriptionComponent implements OnInit {
     }
 
     subscribe() {
-            this.submitted = true;
-            this.subscriptionService.create(this.subscriptionForm.value.email);
+        this.submitted = true;
+        this.subscriptionService.create(this.subscriptionForm.value.email);
     }
 
     onValueChanged(data?: any) {
@@ -60,8 +60,8 @@ export class SubscriptionComponent implements OnInit {
 
     validationMessages = {
         'email': {
-            'required': 'Email is required.',
-            'email': 'Please provide a valid email.'
+            'required': 'Требуется электронная почта.',
+            'email': 'Пожалуйста, укажите действующий адрес электронной почты.'
         }
     };
 
