@@ -1,12 +1,12 @@
 <div class="filters">
-    <h5>Subscribe</h5>
+    <h5>Подписка</h5>
     <form [formGroup]="subscriptionForm" (ngSubmit)="subscribe()" *ngIf="!submitted">
-        <p>Subscribe to new events</p>
-        <input type="text" name="name" value="" placeholder="Insert your e-mail" formControlName="email" required>
+        <p>Получайте сообщения о самых новых спортивных событиях</p>
+        <input type="text" name="name" value="" placeholder="Ваш e-mail" formControlName="email" required>
         <div *ngIf="formErrors.email" class="alert alert-danger">
             {{ formErrors.email }}
         </div>
-        <button type="submit" name="button" [disabled]="!subscriptionForm.valid">Subscribe</button>
+        <button type="submit" name="button" [disabled]="!subscriptionForm.valid">Подписаться</button>
     </form>
-    <p *ngIf="submitted"> Thanks! </p>
+    <p *ngIf="submitted"> Спасибо! </p>
 </div>
