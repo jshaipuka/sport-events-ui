@@ -39,20 +39,9 @@
     </label>
 
     <h5>When</h5>
-<button type="button" name="button" (click)="selectDateInterval('past')" [ngClass]="{'btn-full': isDateSelected('past')}">Past Events</button>
+    <button type="button" name="button" (click)="selectDateInterval('past')" [ngClass]="{'btn-full': isDateSelected('past')}">Past Events</button>
     <button type="button" name="button" (click)="selectDateInterval('upcoming')" [ngClass]="{'btn-full': isDateSelected('upcoming')}">Upcoming Events</button>
 
     <h5>Where</h5>
-
-    <div class="input-search-select">
-        <div class="dropdown">
-            <div class="dropdown-container">
-                <p class="dropdown-button">Choose a City</p>
-                <ul class="dropdown-menu dropdown-select">
-                    <li *ngFor="let city of cities" (click)="selectCity(city.id)">{{city.name}}</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-
+    <button *ngFor="let city of cities" type="button" name="button" (click)="selectCity(city.id)" [ngClass]="{'btn-full': isCitySelected(city.id)}">{{city.name}}</button>
 </div>
