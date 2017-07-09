@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 
 import { Http } from '@angular/http';
 
-import { Config } from '../app.config';
+import { Config } from '../../app.config';
 
 @Injectable()
 export class SubscriptionService {

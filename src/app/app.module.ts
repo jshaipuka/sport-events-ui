@@ -11,7 +11,7 @@ import { AppComponent } from './app.component';
 import { SubscriptionComponent } from './subscription/subscription.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
-import { SubscriptionService } from './subscription/subscription.service';
+import { SubscriptionService } from './subscription/services/subscription.service';
 
 @NgModule({
     declarations: [
