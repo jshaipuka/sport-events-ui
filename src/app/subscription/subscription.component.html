@@ -6,7 +6,7 @@
         <div *ngIf="formErrors.email" class="alert alert-danger">
             {{ formErrors.email }}
         </div>
-        <button type="submit" name="button">Subscribe</button>
+        <button type="submit" name="button" [disabled]="!subscriptionForm.valid">Subscribe</button>
     </form>
     <p *ngIf="submitted"> Thanks! </p>
 </div>
