@@ -45,15 +45,15 @@ export class FilterComponent implements OnInit {
             });
     }
 
-    selectDateInterval(dateInterval: string) {
+    selectDateInterval(dateInterval: string, noNavigate?: boolean) {
         if (this.selectedDateInterval !== dateInterval) {
             this.selectedDateInterval = dateInterval;
             this.queryParams.dateInterval = this.selectedDateInterval;
-            this.navigate();
+            if(!noNavigate) this.navigate();
         }
     }
 
-    selectSport(sportId: number) {
+    selectSport(sportId: number, noNavigate?: boolean) {
         const index = this.selectedSportIds.indexOf(sportId);
         if (index === -1) {
             this.selectedSportIds.push(sportId);
@@ -62,10 +62,10 @@ export class FilterComponent implements OnInit {
         }
 
         this.queryParams.sportFiltersIds = this.selectedSportIds.toString();
-        this.navigate();
+        if(!noNavigate) this.navigate();
     }
 
-    selectCity(cityId: number) {
+    selectCity(cityId: number, noNavigate?: boolean) {
         const index = this.selectedCityIds.indexOf(cityId);
         if (index === -1) {
             this.selectedCityIds.push(cityId);
@@ -74,14 +74,18 @@ export class FilterComponent implements OnInit {
         }
 
         this.queryParams.cityFiltersIds = this.selectedCityIds.toString();
-        this.navigate();
+        if(!noNavigate) this.navigate();
     }
 
-    deselectAll() {
+    deselectAll(noNavigate?: boolean) {
         this.queryParams = {
             cityFiltersIds: undefined,
             sportFiltersIds: undefined
         };
+        if(!noNavigate) this.navigate();
+    }
+
+    onFilter() {
         this.navigate();
     }
 
