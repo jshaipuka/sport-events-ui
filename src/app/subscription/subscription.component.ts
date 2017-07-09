@@ -32,11 +32,8 @@ export class SubscriptionComponent implements OnInit {
     }
 
     subscribe() {
-        const unableToSubmit = this.subscriptionForm.invalid && this.subscriptionForm.value.email === null;
-        if (!unableToSubmit) {
             this.submitted = true;
             this.subscriptionService.create(this.subscriptionForm.value.email);
-        }
     }
 
     onValueChanged(data?: any) {
