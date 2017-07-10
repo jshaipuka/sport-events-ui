@@ -91,4 +91,9 @@ export class EventComponent implements OnInit {
     formatDate(date, timezone, format){
         return momentTimezone(date).tz(timezone).format(format);
     }
+
+    isTimeValid(date, timezone) {
+        return momentTimezone(date).tz(timezone).hour();
+    }
+
 }

@@ -18,7 +18,7 @@
             <h5>{{ event.name }}</h5>
             <p>{{ event.description | truncate: 50 }}</p>
             <div class="card-infos">
-                <p>
+                <p *ngIf="isTimeValid(event.startingDateUTC, event.city.timezoneName)">
                     <span class="icon-clock"></span>{{ formatDate(event.startingDateUTC, event.city.timezoneName, "HH:mm") }}
                 </p>
                 <p>
