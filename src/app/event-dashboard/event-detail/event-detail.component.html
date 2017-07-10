@@ -31,6 +31,12 @@
                 <p *ngIf="event?.price">
                   <span class="icon-fee"></span>{{ event.price }}
                 </p>
+                <p *ngIf="event?.webLink">
+                    <a [href]="event.webLink">Сайт события</a>
+                </p>
+                <p *ngIf="event?.announcementWebLink">
+                    <a [href]="event.announcementWebLink">Правила</a>
+                </p>
               </div>
 
             </div>
