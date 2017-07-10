@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Amatic+SC);
+@import url(https://fonts.googleapis.com/css?family=Neucha&amp;subset=cyrillic);
 html {
   box-sizing: border-box; }
 
@@ -264,7 +264,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Amatic SC", "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
+  font-family: "Neucha", "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
   margin: 0; }
 
 h1 {
