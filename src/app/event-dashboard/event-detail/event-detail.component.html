@@ -48,7 +48,7 @@
     <!-- </div> -->
 
 
-    <div class="related-events">
+    <div class="related-events" *ngIf="relatedEvents?.length">
       <hr>
       <h3>Related Events</h3>
       <div class="card-related" *ngFor="let revent of relatedEvents">
