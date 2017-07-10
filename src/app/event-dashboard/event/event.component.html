@@ -25,18 +25,18 @@
                     <span class="icon-map"></span>{{ event.city.name }}
                 </p>
                 <p>
-                    <span class="icon-fee"></span>{{ event.price || "fee" }}
+                    <span class="icon-fee"></span>{{ event.price || "см. подробнее" }}
                 </p>
             </div>
-            <button type="button" name="button" (click)="onDetails(event)">See more</button>
+            <button type="button" name="button" (click)="onDetails(event)">Подробнее</button>
         </div>
     </div>
 
     <div class="single-index-btn" *ngIf="loadMore" style="clear: both;">
-        <button type="button" name="button" class="btn-full" (click)="onLoadMore()">See all Events</button>
+        <button type="button" name="button" class="btn-full" (click)="onLoadMore()">Ещё</button>
     </div>
     <div *ngIf="!loadMore && events && events.length == 0">
-        No events to display
+        Ничего не найдено :(
     </div>
 
 </div>
