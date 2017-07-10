@@ -13,6 +13,8 @@ import 'rxjs/add/operator/switchMap';
 })
 export class EventDetailComponent implements OnInit {
     event: Event;
+    relatedEvents: Event[] = [];
+    errorMessage: any;
 
     constructor(
         private route: ActivatedRoute,
@@ -22,7 +24,20 @@ export class EventDetailComponent implements OnInit {
 
     ngOnInit() {
         const id = +this.route.snapshot.paramMap.get('id');
-        this.eventService.get(id).then((d: Event) => this.event = d);
+        this.eventService.get(id).then(
+            (event: Event) => {
+                this.event = event;
+                const queryParams = {
+                    cityFiltersIds: event.city.id,
+                    sportFiltersIds: event.sport.id
+                };
+                this.eventService.list(event.id, queryParams, 4)
+                    .subscribe(
+                        data => this.relatedEvents =  data.events,
+                        error =>  this.errorMessage = <any>error
+                    );
+            }
+        );
     }
 
 }
