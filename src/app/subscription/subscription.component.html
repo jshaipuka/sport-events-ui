@@ -3,8 +3,8 @@
     <form [formGroup]="subscriptionForm" (ngSubmit)="subscribe()" *ngIf="!submitted">
         <p>Получайте сообщения о самых новых спортивных событиях</p>
         <input type="text" name="name" value="" placeholder="Ваш e-mail" formControlName="email" required>
-        <div *ngIf="formErrors.email" class="alert alert-danger">
-            {{ formErrors.email }}
+        <div *ngIf="emailError" class="alert alert-danger">
+            {{ emailError }}
         </div>
         <button type="submit" name="button" [disabled]="!subscriptionForm.valid">Подписаться</button>
     </form>

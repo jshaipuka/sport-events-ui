@@ -13,6 +13,7 @@ export class SubscriptionComponent implements OnInit {
     submitted = false;
     subscriptionForm: FormGroup;
     email: string;
+    emailError = '';
 
     constructor(private subscriptionService: SubscriptionService, private formBuilder: FormBuilder) { }
 
@@ -38,31 +39,19 @@ export class SubscriptionComponent implements OnInit {
 
     onValueChanged(data?: any) {
         if (!this.subscriptionForm) { return; }
-        const form = this.subscriptionForm;
 
-        for (const field in this.formErrors) {
-            // clear previous error message (if any)
-            this.formErrors[field] = '';
-            const control = form.get(field);
+        this.emailError = '';
+        const control = this.subscriptionForm.get('email');
 
-            if (control && control.dirty && !control.valid) {
-                const messages = this.validationMessages[field];
-                for (const key in control.errors) {
-                    this.formErrors[field] += messages[key] + ' ';
-                }
-            }
+        if (control && control.dirty && !control.valid) {
+            const messages = this.validationMessages;
+            this.emailError = control.errors.required ? messages.required : messages.email;
         }
     }
 
-    formErrors = {
-        'email': ''
-    };
-
-    validationMessages = {
-        'email': {
-            'required': 'Требуется электронная почта.',
-            'email': 'Пожалуйста, укажите действующий адрес электронной почты.'
-        }
+    private validationMessages = {
+        'required': 'Требуется электронная почта.',
+        'email': 'Пожалуйста, укажите действующий адрес электронной почты.'
     };
 
 }
