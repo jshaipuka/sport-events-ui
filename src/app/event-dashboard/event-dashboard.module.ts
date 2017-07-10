@@ -8,12 +8,13 @@ import { EventDashboardComponent } from './event-dashboard/event-dashboard.compo
 import { EventComponent } from './event/event.component';
 import { EventDetailComponent } from './event-detail/event-detail.component';
 import { FilterComponent } from './filter/filter.component';
+import { CreateEventComponent } from './create-event/create-event.component';
 
 import { EventService } from './shared/services/event.service';
 import { FilterService } from './shared/services/filter.service';
 
 import { TruncatePipe } from './shared/pipes/truncate.pipe';
-import { CreateEventComponent } from './create-event/create-event.component';
+import { TimezoneDatePipe } from './shared/pipes/timezone-date.pipe';
 
 @NgModule({
     declarations: [
@@ -21,8 +22,9 @@ import { CreateEventComponent } from './create-event/create-event.component';
         EventComponent,
         EventDetailComponent,
         FilterComponent,
-        TruncatePipe,
         CreateEventComponent,
+        TruncatePipe,
+        TimezoneDatePipe,
     ],
     imports: [
         CommonModule,

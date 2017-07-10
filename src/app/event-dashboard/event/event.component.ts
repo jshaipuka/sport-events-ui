@@ -2,30 +2,10 @@ import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute, Router, ParamMap } from '@angular/router';
 import { Event } from '../shared/models/event';
 import { EventService } from '../shared/services/event.service';
-import * as momentTimezone from 'moment-timezone';
-import 'moment/locale/ru';
-momentTimezone.locale('ru');
-momentTimezone.updateLocale('ru', {
-    months : [
-        'января',
-        'февраля',
-        'марта',
-        'апреля',
-        'мая',
-        'июня',
-        'июля',
-        'августа',
-        'сентября',
-        'октября',
-        'ноября',
-        'декабря'
-    ]
-});
 
 import 'rxjs/add/operator/switchMap';
 import 'rxjs/add/operator/map';
 import { Observable } from 'rxjs/Observable';
-
 
 @Component({
     selector: 'se-event',
@@ -86,14 +66,6 @@ export class EventComponent implements OnInit {
     onDetails(event: Event){
         const { id, transliteratedName } = event;
         this.router.navigate(['/event', id, transliteratedName ]);
-    }
-
-    formatDate(date, timezone, format){
-        return momentTimezone(date).tz(timezone).format(format);
-    }
-
-    isTimeValid(date, timezone) {
-        return momentTimezone(date).tz(timezone).hour();
     }
 
 }

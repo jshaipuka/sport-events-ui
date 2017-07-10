@@ -14,7 +14,7 @@
           <div class="card">
             <div class="image sports running" [ngStyle]="{'background-image': 'url(assets/images/sports/' + event?.sport?.image + '160x160.png)'}">
               <div class="date">
-                <strong>{{ event?.startingDateUTC | date: "dd / MMMM" }}</strong>
+                <strong>{{ event.startingDateUTC | timezoneDate: event.city.timezoneName : "Do MMMM" }}</strong>
                 <br>{{ event?.startingDateUTC | date: "y" }}</div>
               <p>
                 <strong>{{ event?.sport.name }}</strong>
@@ -22,8 +22,8 @@
             </div>
             <div class="text">
               <div class="card-infos">
-                <p>
-                  <span class="icon-clock"></span>{{ event?.startingDateUTC | date: "HH:mm" }}
+                <p *ngIf="event.startingDateUTC | timezoneDate: event.city.timezoneName : true">
+                    <span class="icon-clock"></span>{{ event.startingDateUTC | timezoneDate: event.city.timezoneName : "HH:mm" }}
                 </p>
                 <p>
                   <span class="icon-map"></span>{{ event?.city.name }}
@@ -58,7 +58,7 @@
       <div class="card-related" *ngFor="let revent of relatedEvents; trackBy: revent?.id">
         <div class="image sports running" [ngStyle]="{'background-image': 'url(assets/images/sports/' + revent.sport.image + '160x160.png)'}">
           <div class="date">
-            <strong>{{ revent.startingDateUTC | date: "dd / MMMM" }}</strong>
+            <strong>{{ revent.startingDateUTC | timezoneDate: revent.city.timezoneName : "Do MMMM" }}</strong>
             <br>{{ revent.startingDateUTC | date: "y" }}</div>
           <p>
             <strong>{{ revent.sport.name }}</strong>
@@ -68,8 +68,8 @@
           <h5>{{ revent.name }}</h5>
           <p>{{ revent.description | truncate: 50 }}</p>
           <div class="card-infos">
-            <p>
-              <span class="icon-clock"></span>{{ revent.startingDateUTC | date: "HH:mm" }}
+            <p *ngIf="revent.startingDateUTC | timezoneDate: revent.city.timezoneName : true">
+                <span class="icon-clock"></span>{{ revent.startingDateUTC | timezoneDate: revent.city.timezoneName : "HH:mm" }}
             </p>
             <p>
               <span class="icon-map"></span>{{ revent.city.name }}
