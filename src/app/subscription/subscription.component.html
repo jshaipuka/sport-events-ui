@@ -2,7 +2,7 @@
     <h5>Подписка</h5>
     <form [formGroup]="subscriptionForm" (ngSubmit)="subscribe()" *ngIf="!submitted">
         <p>Получайте сообщения о самых новых спортивных событиях</p>
-        <input type="text" name="name" value="" placeholder="Ваш e-mail" formControlName="email" required>
+        <input type="text" name="name" value="" placeholder="Ваш e-mail" formControlName="email" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" required>
         <div *ngIf="emailError" class="alert alert-danger">
             {{ emailError }}
         </div>

@@ -45,13 +45,13 @@ export class SubscriptionComponent implements OnInit {
 
         if (control && control.dirty && !control.valid) {
             const messages = this.validationMessages;
-            this.emailError = control.errors.required ? messages.required : messages.email;
+            this.emailError = control.errors.required ? messages.required : messages.pattern;
         }
     }
 
     private validationMessages = {
         'required': 'Требуется электронная почта.',
-        'email': 'Пожалуйста, укажите действующий адрес электронной почты.'
+        'pattern': 'Пожалуйста, укажите действующий адрес электронной почты.'
     };
 
 }
