@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
-import { SubscriptionService } from './services/subscription.service';
+import { SubscriptionService } from '../services/subscription.service';
 
 @Component({
     selector: 'se-subscription',

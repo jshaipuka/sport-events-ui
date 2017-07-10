@@ -8,10 +8,7 @@ import { LoginModule } from './login/login.module';
 import { EventDashboardModule } from './event-dashboard/event-dashboard.module';
 
 import { AppComponent } from './app.component';
-import { SubscriptionComponent } from './subscription/subscription.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-
-import { SubscriptionService } from './subscription/services/subscription.service';
 
 @NgModule({
     declarations: [
@@ -26,7 +23,6 @@ import { SubscriptionService } from './subscription/services/subscription.servic
         EventDashboardModule,
         AppRoutingModule
     ],
-    bootstrap: [AppComponent],
-    providers: [SubscriptionService]
+    bootstrap: [AppComponent]
 })
 export class AppModule { }
