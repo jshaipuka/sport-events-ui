@@ -3,7 +3,24 @@ import { ActivatedRoute, Router, ParamMap } from '@angular/router';
 import { Event } from '../shared/models/event';
 import { EventService } from '../shared/services/event.service';
 import * as momentTimezone from 'moment-timezone';
-
+import 'moment/locale/ru';
+momentTimezone.locale('ru');
+momentTimezone.updateLocale('ru', {
+    months : [
+        'января',
+        'февраля',
+        'марта',
+        'апреля',
+        'мая',
+        'июня',
+        'июля',
+        'августа',
+        'сентября',
+        'октября',
+        'ноября',
+        'декабря'
+    ]
+});
 
 import 'rxjs/add/operator/switchMap';
 import 'rxjs/add/operator/map';
