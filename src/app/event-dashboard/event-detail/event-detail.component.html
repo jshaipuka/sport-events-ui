@@ -1,5 +1,5 @@
   <div class="main-content">
-    <h3>{{ event.name }}</h3>
+    <h3>{{ event?.name }}</h3>
 
     <!-- <div class="wrap-content"> -->
 
@@ -12,23 +12,23 @@
         <div class="card-single-text">
 
           <div class="card">
-            <div class="image sports running" [ngStyle]="{'background-image': 'url(assets/images/sports/' + event.sport.image + '160x160.png)'}">
+            <div class="image sports running" [ngStyle]="{'background-image': 'url(assets/images/sports/' + event?.sport.image + '160x160.png)'}">
               <div class="date">
-                <strong>{{ event.startingDateUTC | date: "dd / MMMM" }}</strong>
-                <br>{{ event.startingDateUTC | date: "y" }}</div>
+                <strong>{{ event?.startingDateUTC | date: "dd / MMMM" }}</strong>
+                <br>{{ event?.startingDateUTC | date: "y" }}</div>
               <p>
-                <strong>{{ event.sport.name }}</strong>
+                <strong>{{ event?.sport.name }}</strong>
               </p>
             </div>
             <div class="text">
               <div class="card-infos">
                 <p>
-                  <span class="icon-clock"></span>{{ event.startingDateUTC | date: "HH:mm" }}
+                  <span class="icon-clock"></span>{{ event?.startingDateUTC | date: "HH:mm" }}
                 </p>
                 <p>
-                  <span class="icon-map"></span>{{ event.city.name }}
+                  <span class="icon-map"></span>{{ event?.city.name }}
                 </p>
-                <p *ngIf="event.price">
+                <p *ngIf="event?.price">
                   <span class="icon-fee"></span>{{ event.price }}
                 </p>
               </div>
@@ -39,7 +39,7 @@
         </div>
 
         <h5>Описание</h5>
-        <div [innerHTML]="event.description"></div>
+        <div [innerHTML]="event?.description"></div>
 
       </div>
 
