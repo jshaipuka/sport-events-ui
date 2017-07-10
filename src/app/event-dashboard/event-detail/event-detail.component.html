@@ -12,7 +12,7 @@
         <div class="card-single-text">
 
           <div class="card">
-            <div class="image sports running" [ngStyle]="{'background-image': 'url(assets/images/sports/' + event?.sport.image + '160x160.png)'}">
+            <div class="image sports running" [ngStyle]="{'background-image': 'url(assets/images/sports/' + event?.sport?.image + '160x160.png)'}">
               <div class="date">
                 <strong>{{ event?.startingDateUTC | date: "dd / MMMM" }}</strong>
                 <br>{{ event?.startingDateUTC | date: "y" }}</div>
@@ -78,7 +78,7 @@
               <span class="icon-fee"></span>{{ revent.price }}
             </p>
           </div>
-          <button type="button" name="button">Подробнее</button>
+          <button type="button" name="button" (click)="onDetails(revent)">Подробнее</button>
         </div>
       </div>
 

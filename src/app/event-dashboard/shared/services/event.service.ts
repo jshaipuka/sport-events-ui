@@ -30,10 +30,10 @@ export class EventService {
             .catch(this.handleErrorObservable);
     }
 
-    get(id: number): Promise<Event> {
-        return this.http.get(`${Config.API_URL}/events/${id}`).toPromise()
-            .then(this.extractData)
-            .catch(this.handleError);
+    get(id: number):  Observable<Event> {
+        return this.http.get(`${Config.API_URL}/events/${id}`)
+            .map(this.extractData)
+            .catch(this.handleErrorObservable);
     }
 
     private extractData(response: Response) {

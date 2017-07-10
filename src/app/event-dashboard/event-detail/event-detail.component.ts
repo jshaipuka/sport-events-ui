@@ -23,9 +23,16 @@ export class EventDetailComponent implements OnInit {
     ) { }
 
     ngOnInit() {
-        const id = +this.route.snapshot.paramMap.get('id');
-        this.eventService.get(id).then(
-            (event: Event) => {
+        this.setup();
+    }
+
+    private setup() {
+        this.route.paramMap
+            .switchMap((params: ParamMap) => {
+                const id = +params.get('id');
+                return this.eventService.get(id);
+            })
+            .subscribe((event: Event) => {
                 this.event = event;
                 const queryParams = {
                     cityFiltersIds: event.city.id,
@@ -36,8 +43,14 @@ export class EventDetailComponent implements OnInit {
                         data => this.relatedEvents =  data.events,
                         error =>  this.errorMessage = <any>error
                     );
-            }
+            },
+            error =>  this.errorMessage = <any>error
         );
+    }
+
+    onDetails(event: Event){
+        const { id, transliteratedName } = event;
+        this.router.navigate(['/event', id, transliteratedName ]);
     }
 
 }
