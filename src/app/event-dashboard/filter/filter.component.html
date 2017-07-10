@@ -45,7 +45,9 @@
     </label>
 
     <h5>Где</h5>
-    <button *ngFor="let city of cities" type="button" name="button" (click)="selectCity(city.id)" [ngClass]="{'btn-full': isCitySelected(city.id)}">{{city.name}}</button>
+    <label *ngFor="let city of cities">
+        <input type="checkbox" name="checkbox" value="{{city.id}}" (click)="selectCity(city.id)" [checked]="isCitySelected(city.id)">{{city.name}} <span class="badge" style="float:right;">{{ this.stats && this.stats['city_'+city.id]}}</span>
+    </label>
 
     <h5>Когда</h5>
     <button type="button" name="button" (click)="selectDateInterval('past')" [ngClass]="{'btn-full': isDateSelected('past')}">Прошедшие события</button>
