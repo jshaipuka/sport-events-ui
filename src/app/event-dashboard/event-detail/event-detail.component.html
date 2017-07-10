@@ -28,8 +28,8 @@
                   <span class="icon-clock"></span>{{ event.startingDateUTC | date: "HH:mm" }}</p>
                 <p>
                   <span class="icon-map"></span>{{ event.city.name }}</p>
-                <p>
-                  <span class="icon-fee"></span>{{ event.price || "см. подробнее" }}</p>
+                <p *ngIf="event.price">
+                  <span class="icon-fee"></span>{{ event.price }}</p>
               </div>
 
             </div>

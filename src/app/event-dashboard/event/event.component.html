@@ -24,8 +24,8 @@
                 <p>
                     <span class="icon-map"></span>{{ event.city.name }}
                 </p>
-                <p>
-                    <span class="icon-fee"></span>{{ event.price || "см. подробнее" }}
+                <p *ngIf="event.price">
+                    <span class="icon-fee"></span>{{ event.price }}
                 </p>
             </div>
             <button type="button" name="button" (click)="onDetails(event)">Подробнее</button>
