@@ -29,8 +29,17 @@
         </div>
 
         <h5>Когда</h5>
-        <button type="button" name="button" (click)="selectDateInterval('past', true)" [ngClass]="{'btn-full': isDateSelected('past')}">Прошедшие события</button>
-        <button type="button" name="button" (click)="selectDateInterval('upcoming', true)" [ngClass]="{'btn-full': isDateSelected('upcoming')}">Предстоящие события</button>
+        <div class="input-search-select">
+            <div class="dropdown">
+                <div class="dropdown-container">
+                    <p class="dropdown-button">Выбрать время</p>
+                    <ul class="dropdown-menu dropdown-select">
+                        <li (click)="selectDateInterval('past', true)">Прошедшие события</li>
+                        <li (click)="selectDateInterval('upcoming', true)">Предстоящие события</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
 
         <button type="button" name="button" class="btn-full" (click)="onFilter()">Показать</button>
     </div>
