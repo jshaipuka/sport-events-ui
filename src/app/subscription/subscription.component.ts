@@ -19,10 +19,9 @@ export class SubscriptionComponent implements OnInit {
 
     ngOnInit() {
         this.subscriptionForm = this.formBuilder.group({
-            'email': [this.email, [
-                Validators.required,
-                Validators.email
-            ]
+            'email': [
+                this.email,
+                [ Validators.required, Validators.email ]
             ]
         });
 
