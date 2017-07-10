@@ -54,7 +54,7 @@
 
     <div class="related-events" *ngIf="relatedEvents?.length">
       <hr>
-      <h3>Related Events</h3>
+      <h3>Похожие события</h3>
       <div class="card-related" *ngFor="let revent of relatedEvents; trackBy: revent?.id">
         <div class="image sports running" [ngStyle]="{'background-image': 'url(assets/images/sports/' + revent.sport.image + '160x160.png)'}">
           <div class="date">
