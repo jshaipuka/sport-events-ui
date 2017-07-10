@@ -29,7 +29,7 @@
                 <p>
                   <span class="icon-map"></span>{{ event.city.name }}</p>
                 <p>
-                  <span class="icon-fee"></span>{{ event.price || "fee" }}</p>
+                  <span class="icon-fee"></span>{{ event.price || "см. подробнее" }}</p>
               </div>
 
             </div>
@@ -37,6 +37,7 @@
 
         </div>
 
+        <h5>Описание</h5>
         <div [innerHTML]="event.description"></div>
 
       </div>
