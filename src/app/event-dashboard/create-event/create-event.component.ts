@@ -97,6 +97,7 @@ export class CreateEventComponent implements OnInit {
 
         this.submitted = true;
         this.eventService.create(event).catch(err => this.createError = err);
+        this.eventForm.reset();
         this.submitted = false;
     }
 

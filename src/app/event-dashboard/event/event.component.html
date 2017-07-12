@@ -6,7 +6,7 @@
 <div>
 
     <div class="card" *ngFor="let event of events">
-        <div class="image sports running" [ngStyle]="{'background-image': 'url(assets/images/sports/' + event.sport.image + '160x160.png)'}">
+        <div class="image sports running" [ngStyle]="{'background-image': getImage(event)}">
             <div class="date">
                 <strong>{{ event.startingDateUTC | timezoneDate: event.city.timezoneName : "Do MMMM" }}</strong>
                 <br>{{ event.startingDateUTC | date: "y" }}</div>
