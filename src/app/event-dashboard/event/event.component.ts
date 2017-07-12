@@ -68,4 +68,12 @@ export class EventComponent implements OnInit {
         this.router.navigate(['/event', id, transliteratedName ]);
     }
 
+    getImage(event){
+        if(event && event.imageWebLink){
+            return `url(${event.imageWebLink})`;
+        } else {
+            return `url(assets/images/sports/${event.sport.image}160x160.png)`;
+        }
+    }
+
 }
