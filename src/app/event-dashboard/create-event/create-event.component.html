@@ -6,58 +6,62 @@
     </div>
 
     <div class="content">
-        <div class="single-input">
-            <input type="text" name="name" value="" placeholder="Name of the sport">
-        </div>
-        <div class="single-input">
-            <div class="input-search-select">
-                <div class="dropdown">
-                    <div class="dropdown-container">
-                        <p class="dropdown-button">Choose a City</p>
-                        <ul class="dropdown-menu dropdown-select">
-                            <li *ngFor="let city of cities">{{city.name}}</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="single-input">
-            <input type="text" name="name" value="" placeholder="Cost">
-        </div>
-        <div class="single-input">
-            <input type="text" id="datepicker" placeholder="Date">
-        </div>
-        <div class="single-input">
-            <input type="text" id="timepicker-event" placeholder="Time" data-time-format="H:i:s" />
+        <form [formGroup]="eventForm" (ngSubmit)="createEvent()" novalidate>
 
+
+        <div class="single-input">
+            <input type="text" name="name" formControlName="name" value="" placeholder="Name of the sport">
         </div>
         <div class="single-input">
             <div class="input-search-select">
                 <div class="dropdown">
                     <div class="dropdown-container">
-                        <p class="dropdown-button">Kind of Sport</p>
-                        <ul class="dropdown-menu dropdown-select">
-                            <li *ngFor="let sport of sports">{{sport.name}}</li>
-                        </ul>
+                        <select class="dropdown-select" formControlName="city">
+                            <option value="" disabled selected>Choose a city</option>
+                            <option *ngFor="let city of cities" value="{{city.id}}" >{{city.name}}</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="single-input">
+            <input type="text" name="name" value="" placeholder="Cost" formControlName="price">
+        </div>
+        <div class="single-input">
+            <input placeholder="Date" [ngModel]="momentValue | date: 'dd-MM-yyyy'" [(dateTimePicker)]="momentValue" [theme]="'#3d5260'" [locale] = "'ru'" [autoClose]="true" [pickerType]="'date'" [returnObject]=" 'moment' " [viewFormat]= "'YYYY-MM-DD'"  formControlName="date" readonly />
+        </div>
+        <div class="single-input">
+            <input placeholder="Time" [ngModel]="momentValue | date: 'HH:mm'" [(dateTimePicker)]="momentValue" [theme]="'#3d5260'" [locale] = "'ru'" [autoClose]="true" [pickerType]="'time'" formControlName="time" readonly />
+        </div>
+        <div class="single-input">
+            <div class="input-search-select">
+                <div class="dropdown">
+                    <div class="dropdown-container">
+                        <select class="dropdown-select" formControlName="sport">
+                            <option value="" disabled selected>Choose a sport</option>
+                            <option *ngFor="let sport of sports" value="{{sport.id}}" >{{sport.name}}</option>
+                        </select>
                     </div>
                 </div>
             </div>
         </div>
         <div class="single-input">
-            <input type="text" name="name" value="" placeholder="Link sport event">
+            <input type="text" name="name" value="" placeholder="Link sport event" formControlName="imageWebLink">
         </div>
         <div class="single-input">
-            <input type="text" name="name" value="" placeholder="Link position">
+            <input type="text" name="name" value="" placeholder="Link position" formControlName="city" formControlName="announcementWebLink">
         </div>
         <div class="single-input">
-            <input type="text" name="name" value="" placeholder="Website">
+            <input type="text" name="name" value="" placeholder="Website" formControlName="webLink">
         </div>
         <div class="single-input-full">
-            <textarea rows="8" placeholder="Description"></textarea>
+            <textarea rows="8" placeholder="Description" formControlName="description"></textarea>
         </div>
         <div class="single-input-btn">
             <button type="button" name="button">Create Event</button>
         </div>
+        </form>
     </div>
 
 </div>

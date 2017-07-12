@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ReactiveFormsModule }   from '@angular/forms';
+import { ReactiveFormsModule, FormsModule }   from '@angular/forms';
 import { EventDashboardRoutingModule } from './event-dashboard-routing.module';
 import { SubscriptionModule } from '../subscription/subscription.module';
+import { DateTimePickerModule } from 'ng-pick-datetime';
 
 import { EventDashboardComponent } from './event-dashboard/event-dashboard.component';
 import { EventComponent } from './event/event.component';
@@ -29,8 +30,10 @@ import { TimezoneDatePipe } from './shared/pipes/timezone-date.pipe';
     imports: [
         CommonModule,
         ReactiveFormsModule,
+        FormsModule,
         EventDashboardRoutingModule,
-        SubscriptionModule
+        SubscriptionModule,
+        DateTimePickerModule
     ],
     providers: [EventService, FilterService]
 })
