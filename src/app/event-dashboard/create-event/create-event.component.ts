@@ -17,6 +17,8 @@ export class CreateEventComponent implements OnInit {
     submitted = false;
     eventForm: FormGroup;
     createError: any;
+    momentDateValue: any = '';
+    momentTimeValue: any = '';
 
     constructor(
         private eventService: EventService,
