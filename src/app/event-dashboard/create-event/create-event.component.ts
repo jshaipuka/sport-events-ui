@@ -24,25 +24,6 @@ export class CreateEventComponent implements OnInit {
         this.setup();
     }
 
-    private setup2() {
-        this.filterService.listCities().then(cities => this.cities = cities);
-        this.filterService.listSports().then(sports => this.sports = sports);
-
-        this.eventForm = this.formBuilder.group({
-            name: '',
-            description: '',
-            date: '',
-            time: '',
-            sport: '',
-            city: '',
-            webLink: '',
-            imageWebLink: '',
-            announcementWebLink: '',
-            price: ''
-        });
-    }
-
-
     private setup() {
         this.filterService.listCities().then(cities => this.cities = cities);
         this.filterService.listSports().then(sports => this.sports = sports);
