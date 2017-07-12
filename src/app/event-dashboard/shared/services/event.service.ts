@@ -36,12 +36,19 @@ export class EventService {
             .catch(this.handleErrorObservable);
     }
 
+    create(event: any): Promise<any> {
+        return this.http.post(`${Config.API_URL}/events`, event).toPromise()
+            .then(response => response.json())
+            .catch(this.handleError);
+    }
+
     private extractData(response: Response) {
         return response.json() || {};
     }
 
     private handleError(error: any): Promise<any> {
-        return Promise.reject(error.message || error);
+        const { status, statusText, message } = error;
+        return Promise.reject({ status, statusText, message });
     }
 
     private handleErrorObservable (error: Response | any) {

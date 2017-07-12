@@ -3,6 +3,8 @@ import { FilterService } from '../shared/services/filter.service';
 import { City } from '../shared/models/city';
 import { Sport } from '../shared/models/sport';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { EventService } from '../shared/services/event.service';
+import * as moment from 'moment';
 
 @Component({
     selector: 'se-create-event',
@@ -14,8 +16,10 @@ export class CreateEventComponent implements OnInit {
     sports: Sport[];
     submitted = false;
     eventForm: FormGroup;
+    createError: any;
 
     constructor(
+        private eventService: EventService,
         private filterService: FilterService,
         private formBuilder: FormBuilder
     ) { }
@@ -60,7 +64,35 @@ export class CreateEventComponent implements OnInit {
     }
 
     createEvent() {
+        const {
+            announcementWebLink,
+            city,
+            date,
+            description,
+            imageWebLink,
+            name,
+            price,
+            sport,
+            time,
+            webLink
+        } = this.eventForm.value;
+
+        const startingDateUTC =  moment(date + " " + time, "DD-MM-YYYY HH:mm").valueOf();
+
+        const event = {
+            name,
+            description,
+            startingDateUTC,
+            sport,
+            city,
+            price,
+            imageWebLink,
+            announcementWebLink,
+            webLink
+        };
+
         this.submitted = true;
+        this.eventService.create(event).catch(err => this.createError = err);
     }
 
     onValueChanged(data?: any) {
