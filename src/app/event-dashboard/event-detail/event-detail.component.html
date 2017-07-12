@@ -29,13 +29,13 @@
                   <span class="icon-map"></span>{{ event?.city.name }}
                 </p>
                 <p *ngIf="event?.price">
-                  <span class="icon-fee"></span>{{ event.price }}
+                  <i class="fa fa-rub icon-rub" aria-hidden="true"></i>{{ event.price }}
                 </p>
                 <p *ngIf="event?.webLink">
-                    <a [href]="event.webLink">Сайт события</a>
+                    <i class="fa fa-globe icon-globe" aria-hidden="true"></i><a [href]="event.webLink">Сайт события</a>
                 </p>
                 <p *ngIf="event?.announcementWebLink">
-                    <a [href]="event.announcementWebLink">Правила</a>
+                    <i class="fa fa-globe icon-globe" aria-hidden="true"></i><a  [href]="event.announcementWebLink">Правила</a>
                 </p>
               </div>
 

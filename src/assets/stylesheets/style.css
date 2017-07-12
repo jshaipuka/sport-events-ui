@@ -1183,6 +1183,19 @@ body {
     .card-related:nth-child(2n+1) {
       clear: left; } }
 
+.icon-rub {
+  padding-left: 4px;
+  padding-right: 2px; }
+
+.icon-globe {
+  padding-left: 3px;
+  padding-right: 2px; }
+
+a {
+  color: #2c97d3 !important; }
+  a:hover {
+    color: #00579b !important; }
+
 .sidebar {
   padding: 0 0 0 1em; }
   @media screen and (min-width: 769px) {

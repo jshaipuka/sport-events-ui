@@ -270,3 +270,20 @@ body {
     @include omega(2n);
   }
 }
+
+.icon-rub {
+    padding-left:4px;
+    padding-right:2px;
+}
+
+.icon-globe {
+    padding-left:3px;
+    padding-right:2px;
+}
+
+a {
+    color: #2c97d3 !important;
+    &:hover {
+        color: #00579b !important;
+    }
+}
