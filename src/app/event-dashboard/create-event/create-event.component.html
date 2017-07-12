@@ -1,5 +1,5 @@
 <div class="main-content">
-    <h3>Create an Event</h3>
+    <h3>Добавить спортивное событие</h3>
 
     <div class="sidebar">
         <se-subscription></se-subscription>
@@ -16,14 +16,14 @@
         </div>
         <form [formGroup]="eventForm" (ngSubmit)="createEvent()" *ngIf="!submitted" novalidate>
             <div class="single-input">
-                <input [ngClass]="{'forgot': formErrors.name}" type="text" name="name" formControlName="name" value="" placeholder="Name of the sport" required>
+                <input [ngClass]="{'forgot': formErrors.name}" type="text" name="name" formControlName="name" value="" placeholder="Название" required>
             </div>
             <div class="single-input">
                 <div class="input-search-select">
                     <div class="dropdown">
                         <div class="dropdown-container">
                             <select class="dropdown-select" [ngClass]="{'forgot': formErrors.city}" formControlName="city">
-                                <option value="" disabled selected>Choose a city</option>
+                                <option value="" disabled selected>Выбрать город</option>
                                 <option *ngFor="let city of cities" value="{{city.id}}" >{{city.name}}</option>
                             </select>
                         </div>
@@ -32,7 +32,7 @@
             </div>
 
             <div class="single-input">
-                <input [ngClass]="{'forgot': formErrors.price}" type="text" name="name" value="" placeholder="Cost" formControlName="price">
+                <input [ngClass]="{'forgot': formErrors.price}" type="text" name="name" value="" placeholder="Цена" formControlName="price">
             </div>
             <div class="single-input">
                 <input [ngClass]="{'forgot': formErrors.date}" [ngModel]="momentDateValue | date: 'dd-MM-yyyy'" [(dateTimePicker)]="momentDateValue" [theme]="'#3d5260'" [locale] = "'ru'" [autoClose]="true" [pickerType]="'date'" [returnObject]=" 'moment' " [viewFormat]= "'YYYY-MM-DD'"  formControlName="date" readonly />
@@ -45,7 +45,7 @@
                     <div class="dropdown">
                         <div class="dropdown-container">
                             <select [ngClass]="{'forgot': formErrors.sport}" class="dropdown-select" formControlName="sport">
-                                <option value="" disabled selected>Choose a sport</option>
+                                <option value="" disabled selected>Выбрать вид спорта</option>
                                 <option *ngFor="let sport of sports" value="{{sport.id}}" >{{sport.name}}</option>
                             </select>
                         </div>
@@ -53,19 +53,19 @@
                 </div>
             </div>
             <div class="single-input">
-                <input type="text" name="name" value="" placeholder="Link sport event" formControlName="imageWebLink">
+                <input type="text" name="name" value="" placeholder="Ссылка на изображение" formControlName="imageWebLink">
             </div>
             <div class="single-input">
-                <input type="text" name="name" value="" placeholder="Link position" formControlName="city" formControlName="announcementWebLink">
+                <input type="text" name="name" value="" placeholder="Ссылка на правила" formControlName="city" formControlName="announcementWebLink">
             </div>
             <div class="single-input">
-                <input type="text" name="name" value="" placeholder="Website" formControlName="webLink">
+                <input type="text" name="name" value="" placeholder="Ссылка на событие" formControlName="webLink">
             </div>
             <div class="single-input-full">
-                <textarea [ngClass]="{'forgot': formErrors.description}" rows="8" placeholder="Description" formControlName="description"></textarea>
+                <textarea [ngClass]="{'forgot': formErrors.description}" rows="8" placeholder="Подробное описание" formControlName="description"></textarea>
             </div>
             <div class="single-input-btn">
-                <button type="submit" name="button" [disabled]="!eventForm.valid">Create Event</button>
+                <button type="submit" name="button" [disabled]="!eventForm.valid">Добавить</button>
             </div>
         </form>
     </div>
