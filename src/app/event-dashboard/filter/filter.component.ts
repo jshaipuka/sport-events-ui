@@ -104,7 +104,7 @@ export class FilterComponent implements OnInit {
     }
 
     isDateSelected(dateInterval: string){
-        return this.selectedDateInterval === dateInterval;
+        return this.selectedDateInterval ? this.selectedDateInterval === dateInterval : dateInterval === 'upcoming';
     }
 
     private navigate(){
