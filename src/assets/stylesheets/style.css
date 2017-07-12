@@ -93,14 +93,18 @@ html {
   cursor: pointer;
   margin-bottom: 0;
   padding: 0; }
+
 .modal label img {
   border-radius: 150px;
   display: block;
   max-width: 300px; }
+
 .modal .modal-state {
   display: none; }
+
 .modal .modal-trigger {
   padding: 0.5em 1em !important; }
+
 .modal .modal-fade-screen {
   -webkit-transition: opacity 0.25s ease;
   -moz-transition: opacity 0.25s ease;
@@ -126,6 +130,7 @@ html {
     bottom: 0;
     left: 0;
     cursor: pointer; }
+
 .modal .modal-close {
   position: absolute;
   top: 1.5em;
@@ -159,6 +164,7 @@ html {
     -ms-transform: rotate(-45deg);
     -o-transform: rotate(-45deg);
     transform: rotate(-45deg); }
+
 .modal .modal-inner {
   -webkit-transition: opacity 0.25s ease;
   -moz-transition: opacity 0.25s ease;
@@ -205,9 +211,11 @@ html {
     margin-top: 1em; }
     .modal .modal-inner a.cta:last-child {
       padding: 0 2em; }
+
 .modal .modal-state:checked + .modal-fade-screen {
   opacity: 1;
   visibility: visible; }
+
 .modal .modal-state:checked + .modal-fade-screen .modal-inner {
   top: 0.5em; }
 
@@ -532,8 +540,8 @@ html {
           padding: 5%; }
           #login .img-alpha .box-login .boxes .box input, #login .img-alpha .box-login .boxes .box button, #login .img-alpha .box-login .boxes .box .modal .modal-trigger, .modal #login .img-alpha .box-login .boxes .box .modal-trigger,
           #login .img-alpha .box-login .boxes .box button,
-          #login .img-alpha .box-login .boxes .box .modal .modal-trigger,
-          .modal #login .img-alpha .box-login .boxes .box .modal-trigger {
+          #login .img-alpha .box-login .boxes .box .modal .modal-trigger, .modal
+          #login .img-alpha .box-login .boxes .box .modal-trigger {
             margin: 5px 0; }
           #login .img-alpha .box-login .boxes .box a {
             color: #2c97d3;
@@ -605,6 +613,7 @@ header .social-icons {
       position: relative; }
     header .social-icons a:hover {
       color: #00579b; }
+
 header .menu {
   padding: 0 2em;
   max-width: 68em;
@@ -682,6 +691,7 @@ header .menu {
               color: #fff; }
       header .menu .mobile-menu li:hover ul {
         display: initial; }
+
 header .banner {
   position: relative;
   height: 200px;
@@ -1149,6 +1159,7 @@ body {
       margin-right: 0; }
     .card-related:nth-child(2n+1) {
       clear: left; } }
+
 @media screen and (max-width: 524px) {
   .card-related {
     float: left;
@@ -1310,11 +1321,10 @@ footer {
   src: url("../fonts/opensans/regular/opensans-regular-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/opensans/regular/opensans-regular-webfont.woff") format("woff"), url("../fonts/opensans/regular/opensans-regular-webfont.ttf") format("truetype"), url("../fonts/opensans/regular/opensans-regular-webfont.svg#open_sanslight") format("svg");
   font-weight: normal;
   font-style: normal; }
+
 @font-face {
   font-family: 'OpenSansLight';
   src: url("../fonts/opensans/light/opensans-light-webfont.eot");
   src: url("../fonts/opensans/light/opensans-light-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/opensans/light/opensans-light-webfont.woff") format("woff"), url("../fonts/opensans/light/opensans-light-webfont.ttf") format("truetype"), url("../fonts/opensans/light/opensans-light-webfont.svg#open_sanslight") format("svg");
   font-weight: normal;
   font-style: normal; }
-
-/*# sourceMappingURL=style.css.map */
