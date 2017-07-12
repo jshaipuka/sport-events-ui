@@ -17,7 +17,7 @@
                 <span>{{ formErrors[fieldKey] }}</span>
             </div>
         </div>
-        <form [formGroup]="eventForm" (ngSubmit)="createEvent()" *ngIf="!submitted" novalidate>
+        <form [formGroup]="eventForm" (ngSubmit)="createEvent()" novalidate>
             <div class="single-input">
                 <input [ngClass]="{'forgot': formErrors.name}" type="text" name="name" formControlName="name" value="" placeholder="Название" required>
             </div>
@@ -27,7 +27,7 @@
                         <div class="dropdown-container">
                             <select class="dropdown-select" [ngClass]="{'forgot': formErrors.city}" formControlName="city">
                                 <option value="" disabled selected>Выбрать город</option>
-                                <option *ngFor="let city of cities" value="{{city}}" >{{city.name}}</option>
+                                <option *ngFor="let city of cities" value="{{city.id}}" >{{city.name}}</option>
                             </select>
                         </div>
                     </div>
@@ -49,7 +49,7 @@
                         <div class="dropdown-container">
                             <select [ngClass]="{'forgot': formErrors.sport}" class="dropdown-select" formControlName="sport">
                                 <option value="" disabled selected>Выбрать вид спорта</option>
-                                <option *ngFor="let sport of sports" value="{{sport}}" >{{sport.name}}</option>
+                                <option *ngFor="let sport of sports" value="{{sport.id}}" >{{sport.name}}</option>
                             </select>
                         </div>
                     </div>
@@ -59,7 +59,7 @@
                 <input type="text" name="name" value="" placeholder="Ссылка на изображение" formControlName="imageWebLink">
             </div>
             <div class="single-input">
-                <input type="text" name="name" value="" placeholder="Ссылка на правила" formControlName="city" formControlName="announcementWebLink">
+                <input type="text" name="name" value="" placeholder="Ссылка на правила" formControlName="announcementWebLink">
             </div>
             <div class="single-input">
                 <input type="text" name="name" value="" placeholder="Ссылка на событие" formControlName="webLink">

@@ -83,8 +83,12 @@ export class CreateEventComponent implements OnInit {
             name,
             description,
             startingDateUTC,
-            sport,
-            city,
+            sport: {
+                id: sport
+            },
+            city: {
+                id: city
+            },
             price,
             imageWebLink,
             announcementWebLink,
@@ -93,6 +97,7 @@ export class CreateEventComponent implements OnInit {
 
         this.submitted = true;
         this.eventService.create(event).catch(err => this.createError = err);
+        this.submitted = false;
     }
 
     onValueChanged(data?: any) {
