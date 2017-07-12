@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { FilterService } from '../shared/services/filter.service';
+import { City } from '../shared/models/city';
+import { Sport } from '../shared/models/sport';
 
 @Component({
     selector: 'se-create-event',
@@ -6,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
     styleUrls: ['./create-event.component.scss']
 })
 export class CreateEventComponent implements OnInit {
+    cities: City[];
+    sports: Sport[];
 
-    constructor() { }
+    constructor(private filterService: FilterService) { }
 
-    ngOnInit() { }
+    ngOnInit() {
+        this.setup();
+    }
+
+    private setup() {
+        this.filterService.listCities().then(cities => this.cities = cities);
+        this.filterService.listSports().then(sports => this.sports = sports);
+    }
 
 }

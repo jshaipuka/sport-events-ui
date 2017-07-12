@@ -15,8 +15,7 @@
                     <div class="dropdown-container">
                         <p class="dropdown-button">Choose a City</p>
                         <ul class="dropdown-menu dropdown-select">
-                            <li>Moscow</li>
-                            <li>St Petersburg</li>
+                            <li *ngFor="let city of cities">{{city.name}}</li>
                         </ul>
                     </div>
                 </div>
@@ -38,23 +37,7 @@
                     <div class="dropdown-container">
                         <p class="dropdown-button">Kind of Sport</p>
                         <ul class="dropdown-menu dropdown-select">
-                            <li>Running</li>
-                            <li>Badminton</li>
-                            <li>Basketball</li>
-                            <li>Biathlon</li>
-                            <li>Bowling</li>
-                            <li>Cycling</li>
-                            <li>Volleyball</li>
-                            <li>Duathlon</li>
-                            <li>Equestrian</li>
-                            <li>Cross-country skiing</li>
-                            <li>Multisport</li>
-                            <li>Orientation</li>
-                            <li>Ping Pong</li>
-                            <li>Swimming</li>
-                            <li>Tennis</li>
-                            <li>Triathlon</li>
-                            <li>Football</li>
+                            <li *ngFor="let sport of sports">{{sport.name}}</li>
                         </ul>
                     </div>
                 </div>
