@@ -24,7 +24,7 @@ export class CreateEventComponent implements OnInit {
         this.setup();
     }
 
-    private setup() {
+    private setup2() {
         this.filterService.listCities().then(cities => this.cities = cities);
         this.filterService.listSports().then(sports => this.sports = sports);
 
@@ -42,5 +42,95 @@ export class CreateEventComponent implements OnInit {
         });
     }
 
-    createEvent() { }
+
+    private setup() {
+        this.filterService.listCities().then(cities => this.cities = cities);
+        this.filterService.listSports().then(sports => this.sports = sports);
+
+        this.eventForm = this.formBuilder.group({
+            name: ['',
+                Validators.required
+            ],
+            description: ['',
+                Validators.required
+            ],
+            date: ['',
+                Validators.required
+            ],
+            time: '',
+            sport: ['',
+                Validators.required
+            ],
+            city: ['',
+                Validators.required
+            ],
+            webLink: '',
+            imageWebLink: '',
+            announcementWebLink: '',
+            price: ['',
+                Validators.required
+            ]
+        });
+
+        this.eventForm.valueChanges
+            .subscribe(data => this.onValueChanged(data));
+
+        this.onValueChanged();
+    }
+
+    createEvent() {
+        this.submitted = true;
+    }
+
+    onValueChanged(data?: any) {
+        if (!this.eventForm) { return; }
+        const form = this.eventForm;
+
+        for (const field in this.formErrors) {
+            this.formErrors[field] = '';
+            const control = form.get(field);
+
+            if (control && control.dirty && !control.valid) {
+                const messages = this.validationMessages[field];
+                for (const key in control.errors) {
+                    this.formErrors[field] += messages[key] + ' ';
+                }
+            }
+        }
+    }
+
+    formErrors = {
+        'name': '',
+        'description': '',
+        'date': '',
+        'sport': '',
+        'city': '',
+        'price': ''
+    };
+
+    getErrors() {
+        return Object.keys(this.formErrors);
+    }
+
+    validationMessages = {
+        'name': {
+            'required': 'Name is required.'
+        },
+        'description': {
+            'required': 'Description is required.'
+        },
+        'date': {
+            'required': 'Description is required.'
+        },
+        'sport': {
+            'required': 'Sport is required.'
+        },
+        'city': {
+            'required': 'City is required.'
+        },
+        'price': {
+            'required': 'Price is required.'
+        },
+    };
+
 }
