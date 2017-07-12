@@ -921,9 +921,14 @@ body {
         color: #fff;
         height: 135px; }
         .main-content .content div .card .image p {
-          margin: 30px 0 10px; }
+          background: rgba(44, 151, 221, 0.8);
+          margin: 27px 0 10px;
+          padding-top: 5px;
+          padding-bottom: 5px;
+          width: 100%; }
           .main-content .content div .card .image p strong {
-            color: #fff; }
+            color: #fff;
+            width: 100%; }
         .main-content .content div .card .image .date {
           background: rgba(44, 151, 221, 0.8);
           height: 80px;
@@ -1091,9 +1096,14 @@ body {
     color: #fff;
     height: 135px; }
     .card-related .image p {
-      margin: 30px 0 10px; }
+      background: rgba(44, 151, 221, 0.8);
+      margin: 27px 0 10px;
+      padding-top: 5px;
+      padding-bottom: 5px;
+      width: 100%; }
       .card-related .image p strong {
-        color: #fff; }
+        color: #fff;
+        width: 100%; }
     .card-related .image .date {
       background: rgba(44, 151, 221, 0.8);
       height: 80px;

@@ -8,9 +8,14 @@
     color : $color-white;
     height: 135px;
     p {
-      margin: 30px 0 10px;
+      background: $color-blue-alpha;
+      margin: 27px 0 10px;
+      padding-top: 5px;
+      padding-bottom: 5px;
+      width: 100%;
       strong {
         color: $color-white;
+        width: 100%;
       }
     }
     .date {
