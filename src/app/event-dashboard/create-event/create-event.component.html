@@ -41,7 +41,7 @@
                 <input [ngClass]="{'forgot': formErrors.date}" [ngModel]="momentDateValue | date: 'dd-MM-yyyy'" [(dateTimePicker)]="momentDateValue" [theme]="'#3d5260'" [locale] = "'ru'" [autoClose]="true" [pickerType]="'date'" [returnObject]=" 'moment' " [viewFormat]= "'YYYY-MM-DD'"  formControlName="date" readonly />
             </div>
             <div class="single-input">
-                <input [ngClass]="{'forgot': formErrors.time}" [ngModel]="momentTimeValue | date: 'HH:mm'" [(dateTimePicker)]="momentTimeValue" [theme]="'#3d5260'" [locale] = "'ru'" [autoClose]="true" [pickerType]="'time'" formControlName="time" readonly />
+                <input [ngModel]="momentTimeValue | date: 'HH:mm'" [(dateTimePicker)]="momentTimeValue" [theme]="'#3d5260'" [locale] = "'ru'" [autoClose]="true" [pickerType]="'time'" formControlName="time" readonly />
             </div>
             <div class="single-input">
                 <div class="input-search-select">
