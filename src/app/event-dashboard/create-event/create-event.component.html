@@ -12,20 +12,28 @@
         <div class="flash-error" *ngIf="submitted && createError">
             <span>{{createError.statusText}}</span>
         </div>
-        <div *ngFor="let fieldKey of getErrors()">
-            <div class="flash-error"  *ngIf="formErrors[fieldKey]">
-                <span>{{ formErrors[fieldKey] }}</span>
-            </div>
-        </div>
         <form [formGroup]="eventForm" (ngSubmit)="createEvent()" novalidate>
-            <div class="single-input">
-                <input [ngClass]="{'forgot': formErrors.name}" type="text" name="name" formControlName="name" value="" placeholder="Название" required>
+            <div class="form-group">
+                <label for="name">Название</label>
+                <input class="form-control" [ngClass]="{'forgot': formErrors.name}" type="text" name="Название события" formControlName="name" value="" placeholder="Название" required>
+                <div class="flash-error"  *ngIf="formErrors.name">
+                    <span>{{ formErrors.name }}</span>
+                </div>
             </div>
-            <div class="single-input">
-                <div class="input-search-select">
+
+            <div class="single-input-full">
+                <label for="name">Название</label>
+                <input [ngClass]="{'forgot': formErrors.name}" type="text" name="name" formControlName="name" value="" placeholder="Название" required>
+                <div class="flash-error"  *ngIf="formErrors.name">
+                    <span>{{ formErrors.name }}</span>
+                </div>
+            </div>
+            <div class="single-input-full">
+                <label for="city">Город</label>
+                 <div class="input-search-select">
                     <div class="dropdown">
                         <div class="dropdown-container">
-                            <select class="dropdown-select" [ngClass]="{'forgot': formErrors.city}" formControlName="city">
+                            <select class="dropdown-select" formControlName="city">
                                 <option value="" disabled selected>Выбрать город</option>
                                 <option *ngFor="let city of cities" value="{{city.id}}" >{{city.name}}</option>
                             </select>
@@ -34,16 +42,23 @@
                 </div>
             </div>
 
-            <div class="single-input">
+            <div class="single-input-full">
+                <label for="price">Цена</label>
                 <input [ngClass]="{'forgot': formErrors.price}" type="text" name="name" value="" placeholder="Цена" formControlName="price">
+                <div class="flash-error"  *ngIf="formErrors.price">
+                    <span>{{ formErrors.price }}</span>
+                </div>
             </div>
-            <div class="single-input">
-                <input [ngClass]="{'forgot': formErrors.date}" [ngModel]="momentDateValue | date: 'dd-MM-yyyy'" [(dateTimePicker)]="momentDateValue" [theme]="'#3d5260'" [locale] = "'ru'" [autoClose]="true" [pickerType]="'date'" [returnObject]=" 'moment' " [viewFormat]= "'YYYY-MM-DD'"  formControlName="date" readonly />
+            <div class="single-input-full">
+                <label for="date">День</label>
+                <input [ngModel]="momentDateValue | date: 'dd-MM-yyyy'" [(dateTimePicker)]="momentDateValue" [theme]="'#3d5260'" [locale] = "'ru'" [autoClose]="true" [pickerType]="'date'" [returnObject]=" 'moment' " [viewFormat]= "'YYYY-MM-DD'"  formControlName="date" readonly />
             </div>
-            <div class="single-input">
+            <div class="single-input-full">
+                <label for="time">Время</label>
                 <input [ngModel]="momentTimeValue | date: 'HH:mm'" [(dateTimePicker)]="momentTimeValue" [theme]="'#3d5260'" [locale] = "'ru'" [autoClose]="true" [pickerType]="'time'" formControlName="time" readonly />
             </div>
-            <div class="single-input">
+            <div class="single-input-full">
+                <label for="sport">Вид Спорта</label>
                 <div class="input-search-select">
                     <div class="dropdown">
                         <div class="dropdown-container">
@@ -54,18 +69,28 @@
                         </div>
                     </div>
                 </div>
+                <div class="flash-error"  *ngIf="formErrors.sport">
+                    <span>{{ formErrors.sport }}</span>
+                </div>
             </div>
-            <div class="single-input">
+            <div class="single-input-full">
+                <label for="webLink">Ссылка на событие - Необязательно</label>
                 <input type="text" name="name" value="" placeholder="Ссылка на событие" formControlName="webLink">
             </div>
-            <div class="single-input">
+            <div class="single-input-full">
+                <label for="announcementWebLink">Ссылка на правила - Необязательно</label>
                 <input type="text" name="name" value="" placeholder="Ссылка на правила" formControlName="announcementWebLink">
             </div>
-            <div class="single-input">
+            <div class="single-input-full">
+                <label for="imageWebLink">Ссылка на изображение - Необязательно</label>
                 <input type="text" name="name" value="" placeholder="Ссылка на изображение" formControlName="imageWebLink">
             </div>
             <div class="single-input-full">
+                <label for="description">Описание</label>
                 <textarea [ngClass]="{'forgot': formErrors.description}" rows="8" placeholder="Подробное описание" formControlName="description"></textarea>
+                <div class="flash-error"  *ngIf="formErrors.description">
+                    <span>{{ formErrors.description }}</span>
+                </div>
             </div>
             <div class="single-input-btn">
                 <button type="submit" name="button" [disabled]="!eventForm.valid">Добавить</button>
