@@ -13,14 +13,6 @@
             <span>{{createError.statusText}}</span>
         </div>
         <form [formGroup]="eventForm" (ngSubmit)="createEvent()" novalidate>
-            <div class="form-group">
-                <label for="name">Название</label>
-                <input class="form-control" [ngClass]="{'forgot': formErrors.name}" type="text" name="Название события" formControlName="name" value="" placeholder="Название" required>
-                <div class="flash-error"  *ngIf="formErrors.name">
-                    <span>{{ formErrors.name }}</span>
-                </div>
-            </div>
-
             <div class="single-input-full">
                 <label for="name">Название</label>
                 <input [ngClass]="{'forgot': formErrors.name}" type="text" name="name" formControlName="name" value="" placeholder="Название" required>
