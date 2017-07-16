@@ -14,8 +14,16 @@
         </div>
         <form [formGroup]="eventForm" (ngSubmit)="createEvent()" novalidate>
             <div class="single-input-full">
-                <label for="name">Название</label>
-                <input [ngClass]="{'forgot': formErrors.name}" type="text" name="name" formControlName="name" value="" placeholder="Название" required>
+                <label for="event-name">Название</label>
+                <input
+                    formControlName = "name"
+                    name            = "event-name"
+                    type            = "text"
+                    placeholder     = "Железный Человек, Забег Дедов Морозов..."
+                    autocomplete    = "event-name"
+                    [ngClass]       = "{'forgot': formErrors.name}"
+                    required
+                />
                 <div class="flash-error"  *ngIf="formErrors.name">
                     <span>{{ formErrors.name }}</span>
                 </div>
@@ -36,18 +44,52 @@
 
             <div class="single-input-full">
                 <label for="price">Цена</label>
-                <input [ngClass]="{'forgot': formErrors.price}" type="text" name="name" value="" placeholder="Цена" formControlName="price">
+                <input
+                    formControlName = "price"
+                    name            = "price"
+                    type            = "text"
+                    placeholder     = "&#8381; 100 &ndash; 1500"
+                    autocomplete    = "price"
+                    [ngClass]       = "{'forgot': formErrors.price}"
+                    required
+                />
                 <div class="flash-error"  *ngIf="formErrors.price">
                     <span>{{ formErrors.price }}</span>
                 </div>
             </div>
             <div class="single-input-full">
                 <label for="date">День</label>
-                <input type="date" [ngModel]="momentDateValue | date: 'dd-MM-yyyy'" [(dateTimePicker)]="momentDateValue" [theme]="'#3d5260'" [locale] = "'ru'" [autoClose]="true" [pickerType]="'date'" [returnObject]=" 'moment' " [viewFormat]= "'YYYY-MM-DD'"  formControlName="date" readonly />
+                <input
+                    formControlName     = "date"
+                    name                = "date"
+                    type                = "date"
+                    autocomplete        = "date"
+                    [ngModel]           = "momentDateValue | date: 'dd-MM-yyyy'"
+                    [(dateTimePicker)]  = "momentDateValue"
+                    [theme]             = "'#3d5260'"
+                    [locale]            = "'ru'"
+                    [autoClose]         = "true"
+                    [pickerType]        = "'date'"
+                    [returnObject]      = " 'moment' "
+                    [viewFormat]        = "'YYYY-MM-DD'"
+                    readonly
+                />
             </div>
             <div class="single-input-full">
                 <label for="time">Время</label>
-                <input type="time" [ngModel]="momentTimeValue | date: 'HH:mm'" [(dateTimePicker)]="momentTimeValue" [theme]="'#3d5260'" [locale] = "'ru'" [autoClose]="true" [pickerType]="'time'" formControlName="time" readonly />
+                <input
+                    formControlName     = "time"
+                    name                = "time"
+                    type                = "time"
+                    autocomplete        = "time"
+                    [ngModel]           = "momentTimeValue | date: 'HH:mm'"
+                    [(dateTimePicker)]  = "momentTimeValue"
+                    [theme]             = "'#3d5260'"
+                    [locale]            = "'ru'"
+                    [autoClose]         = "true"
+                    [pickerType]        = "'time'"
+                    readonly
+                />
             </div>
             <div class="single-input-full">
                 <label for="sport">Вид Спорта</label>
@@ -67,19 +109,42 @@
             </div>
             <div class="single-input-full">
                 <label for="webLink">Ссылка на событие - Необязательно</label>
-                <input type="url" name="name" value="" placeholder="Ссылка на событие" formControlName="webLink">
+                <input
+                    formControlName = "webLink"
+                    name            = "webLink"
+                    type            = "url"
+                    placeholder     = "http:// ... ссылка на событие"
+                    autocomplete    = "webLink"
+                />
             </div>
             <div class="single-input-full">
                 <label for="announcementWebLink">Ссылка на правила - Необязательно</label>
-                <input type="url" name="name" value="" placeholder="Ссылка на правила" formControlName="announcementWebLink">
+                <input
+                    formControlName = "announcementWebLink"
+                    name            = "announcementWebLink"
+                    type            = "url"
+                    placeholder     = "http:// ... ссылка на правила"
+                    autocomplete    = "announcementWebLink"
+                />
             </div>
             <div class="single-input-full">
                 <label for="imageWebLink">Ссылка на изображение - Необязательно</label>
-                <input type="url" name="name" value="" placeholder="Ссылка на изображение" formControlName="imageWebLink">
+                <input
+                    formControlName = "imageWebLink"
+                    name            = "imageWebLink"
+                    type            = "url"
+                    placeholder     = "http:// ... ссылка на изображение"
+                    autocomplete    = "imageWebLink"
+                />
             </div>
             <div class="single-input-full">
                 <label for="description">Описание</label>
-                <textarea [ngClass]="{'forgot': formErrors.description}" rows="8" placeholder="Подробное описание" formControlName="description"></textarea>
+                <textarea
+                    formControlName = "description"
+                    name            = "description"
+                    placeholder     = "Забег будет проводиться ..."
+                    rows            = "8"
+                    [ngClass]       = "{'forgot': formErrors.description}"></textarea>
                 <div class="flash-error"  *ngIf="formErrors.description">
                     <span>{{ formErrors.description }}</span>
                 </div>
