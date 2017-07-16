@@ -51,11 +51,11 @@
             </div>
             <div class="single-input-full">
                 <label for="date">День</label>
-                <input [ngModel]="momentDateValue | date: 'dd-MM-yyyy'" [(dateTimePicker)]="momentDateValue" [theme]="'#3d5260'" [locale] = "'ru'" [autoClose]="true" [pickerType]="'date'" [returnObject]=" 'moment' " [viewFormat]= "'YYYY-MM-DD'"  formControlName="date" readonly />
+                <input type="date" [ngModel]="momentDateValue | date: 'dd-MM-yyyy'" [(dateTimePicker)]="momentDateValue" [theme]="'#3d5260'" [locale] = "'ru'" [autoClose]="true" [pickerType]="'date'" [returnObject]=" 'moment' " [viewFormat]= "'YYYY-MM-DD'"  formControlName="date" readonly />
             </div>
             <div class="single-input-full">
                 <label for="time">Время</label>
-                <input [ngModel]="momentTimeValue | date: 'HH:mm'" [(dateTimePicker)]="momentTimeValue" [theme]="'#3d5260'" [locale] = "'ru'" [autoClose]="true" [pickerType]="'time'" formControlName="time" readonly />
+                <input type="time" [ngModel]="momentTimeValue | date: 'HH:mm'" [(dateTimePicker)]="momentTimeValue" [theme]="'#3d5260'" [locale] = "'ru'" [autoClose]="true" [pickerType]="'time'" formControlName="time" readonly />
             </div>
             <div class="single-input-full">
                 <label for="sport">Вид Спорта</label>
@@ -75,15 +75,15 @@
             </div>
             <div class="single-input-full">
                 <label for="webLink">Ссылка на событие - Необязательно</label>
-                <input type="text" name="name" value="" placeholder="Ссылка на событие" formControlName="webLink">
+                <input type="url" name="name" value="" placeholder="Ссылка на событие" formControlName="webLink">
             </div>
             <div class="single-input-full">
                 <label for="announcementWebLink">Ссылка на правила - Необязательно</label>
-                <input type="text" name="name" value="" placeholder="Ссылка на правила" formControlName="announcementWebLink">
+                <input type="url" name="name" value="" placeholder="Ссылка на правила" formControlName="announcementWebLink">
             </div>
             <div class="single-input-full">
                 <label for="imageWebLink">Ссылка на изображение - Необязательно</label>
-                <input type="text" name="name" value="" placeholder="Ссылка на изображение" formControlName="imageWebLink">
+                <input type="url" name="name" value="" placeholder="Ссылка на изображение" formControlName="imageWebLink">
             </div>
             <div class="single-input-full">
                 <label for="description">Описание</label>
