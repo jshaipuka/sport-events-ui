@@ -30,8 +30,8 @@ export class FilterComponent implements OnInit {
     }
 
     private setup() {
-        this.filterService.listCities().then(cities => this.cities = cities);
-        this.filterService.listSports().then(sports => this.sports = sports);
+        this.filterService.listCities(true).then(cities => this.cities = cities);
+        this.filterService.listSports(true).then(sports => this.sports = sports);
         this.route.queryParams
             .forEach((params: ParamMap) => {
                 this.queryParams = {

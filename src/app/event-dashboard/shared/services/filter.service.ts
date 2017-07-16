@@ -9,14 +9,20 @@ export class FilterService {
 
     constructor(private htpp: Http) { }
 
-    listCities(): Promise<City[]> {
-        return this.htpp.get(`${Config.API_URL}/cities`).toPromise()
+    listCities(withEventsOnly?: boolean): Promise<City[]> {
+        const baseUrl = `${Config.API_URL}/cities`;
+        const url = withEventsOnly ? `${baseUrl}?withEventsOnly=${withEventsOnly}` : baseUrl;
+
+        return this.htpp.get(url).toPromise()
             .then(data => data.json() as City[])
             .catch(this.handleError);
     }
 
-    listSports(): Promise<Sport[]> {
-        return this.htpp.get(`${Config.API_URL}/sports`).toPromise()
+    listSports(withEventsOnly?: boolean): Promise<Sport[]> {
+        const baseUrl = `${Config.API_URL}/sports`;
+        const url = withEventsOnly ? `${baseUrl}?withEventsOnly=${withEventsOnly}` : baseUrl;
+
+        return this.htpp.get(url).toPromise()
             .then(data => data.json() as Sport[])
             .catch(this.handleError);
     }
