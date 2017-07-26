@@ -42,6 +42,24 @@ export class EventService {
             .catch(this.handleError);
     }
 
+    search(query: string, queryParams: any = {}, limit: number = Config.EVENT_LIMIT): Observable<any> {
+        const { sportFiltersIds, cityFiltersIds, dateInterval } = queryParams;
+
+        const myParams = new URLSearchParams();
+        myParams.append('query', query);
+        myParams.append('limit', limit.toString());
+        myParams.append('sportFiltersIds', sportFiltersIds);
+        myParams.append('cityFiltersIds', cityFiltersIds);
+        myParams.append('dateInterval', dateInterval);
+
+        const options = new RequestOptions({ params: myParams });
+        const url = `${Config.API_URL}/search/events`;
+
+        return this.http.get(url, options)
+            .map(this.extractData)
+            .catch(this.handleErrorObservable);
+    }
+
     private extractData(response: Response) {
         return response.json() || {};
     }
