@@ -6,7 +6,7 @@ import { SubscriptionModule } from '../subscription/subscription.module';
 import { DateTimePickerModule } from 'ng-pick-datetime';
 
 import { EventDashboardComponent } from './event-dashboard/event-dashboard.component';
-import { EventComponent } from './event/event.component';
+import { EventListComponent } from './event-list/event-list.component';
 import { EventDetailComponent } from './event-detail/event-detail.component';
 import { FilterComponent } from './filter/filter.component';
 import { CreateEventComponent } from './create-event/create-event.component';
@@ -20,7 +20,7 @@ import { TimezoneDatePipe } from './shared/pipes/timezone-date.pipe';
 @NgModule({
     declarations: [
         EventDashboardComponent,
-        EventComponent,
+        EventListComponent,
         EventDetailComponent,
         FilterComponent,
         CreateEventComponent,

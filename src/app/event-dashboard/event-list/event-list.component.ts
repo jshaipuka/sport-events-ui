@@ -8,11 +8,11 @@ import 'rxjs/add/operator/map';
 import { Observable } from 'rxjs/Observable';
 
 @Component({
-    selector: 'se-event',
-    templateUrl: './event.component.html',
-    styleUrls: ['./event.component.scss']
+    selector: 'se-event-list',
+    templateUrl: './event-list.component.html',
+    styleUrls: ['./event-list.component.scss']
 })
-export class EventComponent implements OnInit {
+export class EventListComponent implements OnInit {
     events: Event[];
     loadMore: boolean;
     errorMessage: string;

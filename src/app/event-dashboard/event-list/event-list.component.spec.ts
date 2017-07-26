@@ -2,7 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
-import { EventComponent } from './event.component';
+import { EventListComponent } from './event-list.component';
 import { EventService } from '../shared/services/event.service';
 import { TruncatePipe } from '../shared/pipes/truncate.pipe';
 
@@ -51,9 +51,9 @@ const eventServiceStub = {
     }
 };
 
-describe('EventComponent', () => {
-    let component: EventComponent;
-    let fixture: ComponentFixture<EventComponent>;
+describe('EventListComponent', () => {
+    let component: EventListComponent;
+    let fixture: ComponentFixture<EventListComponent>;
     let de: DebugElement;
     let el: HTMLElement;
     let eventService: EventService;
@@ -61,7 +61,7 @@ describe('EventComponent', () => {
     beforeEach(async(() => {
         TestBed.configureTestingModule({
             declarations: [
-                EventComponent,
+                EventListComponent,
                 TruncatePipe
             ],
             providers: [{ provide: EventService, useValue: eventServiceStub }]
@@ -69,7 +69,7 @@ describe('EventComponent', () => {
     }));
 
     beforeEach(() => {
-        fixture = TestBed.createComponent(EventComponent);
+        fixture = TestBed.createComponent(EventListComponent);
         component = fixture.componentInstance;
         fixture.detectChanges();
 
