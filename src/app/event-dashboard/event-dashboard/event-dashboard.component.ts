@@ -5,4 +5,6 @@ import { Component } from '@angular/core';
     templateUrl: './event-dashboard.component.html',
     styleUrls: ['./event-dashboard.component.scss']
 })
-export class EventDashboardComponent {}
+export class EventDashboardComponent {
+    currentYear = new Date().getFullYear();
+}
