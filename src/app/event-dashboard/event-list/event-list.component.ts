@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute, Router, ParamMap } from '@angular/router';
 import { Event } from '../shared/models/event';
 import { EventService } from '../shared/services/event.service';
+import { Config } from '../../app.config';
 
 import 'rxjs/add/operator/switchMap';
 import 'rxjs/add/operator/map';
@@ -13,12 +14,17 @@ import { Observable } from 'rxjs/Observable';
     styleUrls: ['./event-list.component.scss']
 })
 export class EventListComponent implements OnInit {
+    heading: string;
     events: Event[];
     loadMore: boolean;
     errorMessage: string;
     stats: any;
 
     private queryParams: any;
+    private headings = {
+        past: 'Прошедшие события',
+        upcoming: 'Предстоящие события'
+    };
 
     constructor(
         private router: Router,
@@ -27,10 +33,10 @@ export class EventListComponent implements OnInit {
     ) { }
 
     ngOnInit() {
-        this.listEvents();
+        this.setup();
     }
 
-    private listEvents() {
+    private setup() {
         this.route.queryParamMap
             .switchMap((params: ParamMap) => {
                 this.queryParams = {
@@ -38,6 +44,7 @@ export class EventListComponent implements OnInit {
                     cityFiltersIds: params.get('cityFiltersIds'),
                     dateInterval: params.get('dateInterval') || undefined
                 };
+                this.heading = this.headings[this.queryParams.dateInterval] || this.headings[Config.DATE_INTERVAL];
                 return this.eventService.list(null, this.queryParams);
             })
             .subscribe(

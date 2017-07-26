@@ -7,9 +7,25 @@ import { EventDetailComponent } from './event-detail/event-detail.component';
 import { CreateEventComponent } from './create-event/create-event.component';
 
 const routes: Routes = [
-    { path: '', component: EventDashboardComponent, pathMatch: 'full' },
-    { path: 'event/:id/:transliteratedName', component: EventDetailComponent },
-    { path: 'create', component: CreateEventComponent }
+    {
+        path: '',
+        component: EventDashboardComponent,
+        children: [
+            {
+                path: '',
+                pathMatch: 'full',
+                component: EventListComponent
+            },
+            {
+                path: 'event/:id/:transliteratedName',
+                component: EventDetailComponent
+            },
+            {
+                path: 'create',
+                component: CreateEventComponent
+            }
+        ]
+    }
 ];
 
 @NgModule({

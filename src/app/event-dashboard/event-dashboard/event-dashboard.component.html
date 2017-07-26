@@ -1,15 +1,33 @@
-<div class="main-content">
 
-    <h3>{{heading}}</h3>
+<header>
 
-    <!-- mobile -->
-    <div class="sidebar">
-        <se-filter [stats]="events.stats"></se-filter>
-        <se-subscription></se-subscription>
+    <div class="menu">
+        <a routerLink="/">
+            <img class="logo" src="../assets/images/e4s.png" alt="Event4Sport" />
+          </a>
+        <ul>
+            <li><a routerLink="/" routerLinkActive="active-nav">На главную</a></li>
+        </ul>
+        <div class="mobile-menu">
+            <li>
+              <a href="#">
+                <img src="../assets/images/icon-menu.svg" alt="Menu" />
+              </a>
+                <ul>
+                    <li><a routerLink="/" routerLinkActive="active-nav">На главную</a></li>
+                </ul>
+            </li>
+        </div>
     </div>
 
-    <div class="content">
-        <se-event-list #events></se-event-list>
+    <div class="banner">
+        <div class="banner-back">
+            <section>
+                <h1>Спортивные события <br>Москвы и Санкт-Петербурга</h1>
+            </section>
+        </div>
     </div>
 
-</div>
+</header>
+
+<router-outlet></router-outlet>
