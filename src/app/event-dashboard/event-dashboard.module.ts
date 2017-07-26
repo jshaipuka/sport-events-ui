@@ -10,6 +10,7 @@ import { EventListComponent } from './event-list/event-list.component';
 import { EventDetailComponent } from './event-detail/event-detail.component';
 import { FilterComponent } from './filter/filter.component';
 import { CreateEventComponent } from './create-event/create-event.component';
+import { SearchComponent } from './search/search.component';
 
 import { EventService } from './shared/services/event.service';
 import { FilterService } from './shared/services/filter.service';
@@ -24,6 +25,7 @@ import { TimezoneDatePipe } from './shared/pipes/timezone-date.pipe';
         EventDetailComponent,
         FilterComponent,
         CreateEventComponent,
+        SearchComponent,
         TruncatePipe,
         TimezoneDatePipe,
     ],
