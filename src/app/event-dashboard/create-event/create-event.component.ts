@@ -133,22 +133,22 @@ export class CreateEventComponent implements OnInit {
 
     validationMessages = {
         'name': {
-            'required': 'Необхожимо указать "название"'
+            'required': 'Необходимо указать "название"'
         },
         'description': {
-            'required': 'Необхожимо указать "описание"'
+            'required': 'Необходимо указать "описание"'
         },
         'date': {
-            'required': 'Необхожимо указать "дату"'
+            'required': 'Необходимо указать "дату"'
         },
         'sport': {
-            'required': 'Необхожимо указать "вид спорта"'
+            'required': 'Необходимо указать "вид спорта"'
         },
         'city': {
-            'required': 'Необхожимо указать "город"'
+            'required': 'Необходимо указать "город"'
         },
         'price': {
-            'required': 'Необхожимо указать "цену"'
+            'required': 'Необходимо указать "цену"'
         },
     };
 
